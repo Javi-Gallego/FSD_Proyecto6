@@ -117,7 +117,7 @@ export const Register = () => {
       <AuthButton
         text="Register"
         functionClick={regUser}
-        currentClass="authButtonDesign button-4"
+        currentClass="authButtonDesign glow-on-hover"
       />
       <div className="error">{msgError}</div>
     </div>

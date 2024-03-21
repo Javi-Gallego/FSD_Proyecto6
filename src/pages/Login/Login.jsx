@@ -58,7 +58,7 @@ export const Login = () => {
       setMsgError(fetched.message)
       return
     }
-
+    console.log(fetched)
     const decoded = decodeToken(fetched.token)
     console.log(decoded)
     console.log(decoded.firstName)
@@ -100,7 +100,7 @@ export const Login = () => {
       <AuthButton
         text="Login"
         functionClick={logMe}
-        currentClass="authButtonDesign button-4"
+        currentClass="authButtonDesign glow-on-hover"
       />
     </div>
   )
