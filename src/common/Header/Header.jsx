@@ -1,9 +1,27 @@
+import { HeaderLink } from "../HeaderLink/HeaderLink"
+import { LogoutLink } from "../LogoutLink/LogoutLink"
 import "./Header.css"
 
-export const Header = () => {
+export function Header() {
   return (
     <div className="headerDesign">
-      <h1>Header</h1>
+      {sessionStorage.getItem("auth") === "true" ? (
+        <>
+          <HeaderLink title="Home" destination="/" />
+          <HeaderLink
+            title={sessionStorage.getItem("firstName")}
+            destination="/profile"
+          />
+          <HeaderLink title="Timeline" destination="/timeline" />
+          <LogoutLink title="logout" />
+        </>
+      ) : (
+        <>
+          <HeaderLink title="Home" destination="/" />
+          <HeaderLink title="Register" destination="/register" />
+          <HeaderLink title="Login" destination="/login" />
+        </>
+      )}
     </div>
   )
 }
