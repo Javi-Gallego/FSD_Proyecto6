@@ -1,22 +1,24 @@
 .fieldInputDesign {
-    width: 15vw;
-    height: 4vh;
-  
+    width: 15em;
+    height: 2em;
+    text-align: center;
     border-radius: 0.5em;
-    border: 0.2em solid black;
+    border: 0.2em solid rgb(4, 10, 36);    
+    background-color: rgb(4, 10, 36); 
     font-size: 1rem;
-    background-color: rgb(50, 42, 165);
+    color: white;
   }
   
   .fieldInputDesignError {
     border: 0.2em solid red;
   }
-  
-  .fieldInputDesign:focus {
-    border: 0.2em solid rgb(0, 26, 255);
-    outline: none;
-  }
 
   .enabledInput {
     background-color: white;
+    color:rgb(8, 92, 92)
+  }
+
+  .enabledInput:focus {
+    border: 0.2em solid rgb(0, 26, 255);
+    outline: none;
   }

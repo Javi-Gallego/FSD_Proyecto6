@@ -1,9 +1,11 @@
 .profileDesign {
-  height: 90vh;
+  height: auto;
+  min-height: 90vh;
   width: 100vw;
 
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
 
@@ -12,16 +14,25 @@
   font-weight: bold;
 }
 
-.spinner{
-  background-color: transparent;
-  animation:
-  rotate 25s infinite 0s;
+.profileCardDesign {
+  height: auto;
+  width: 15em;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background-color: rgb(4, 10, 36);
+  color: white;
 }
 
-@keyframes rotate {
+.profileCardDesign img {
+  height: 10em;
+  width: 10em;
+}
 
-  to {
-    transform: rotate(1080deg);
-  }
+.error {
+  color: red;
 }
 

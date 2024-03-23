@@ -1,10 +1,10 @@
 .authInputDesign {
-  width: 25vw;
-  height: 8vh;
+  width: 15em;
+  height: 2.5em;
 
   border-radius: 0.5em;
   border: 0.2em solid black;
-  font-size: 0.5rem;
+  font-size: 1rem;
 }
 
 .authInputDesignError {
@@ -13,5 +13,4 @@
 
 .authInputDesign:focus {
   border: 0.2em solid rgb(0, 26, 255);
-  outline: none;
 }

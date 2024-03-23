@@ -64,6 +64,7 @@ export const Login = () => {
     sessionStorage.setItem("token", fetched.token)
     sessionStorage.setItem("user", JSON.stringify(decoded))
     sessionStorage.setItem("firstName", decoded.firstName)
+    sessionStorage.setItem("role", decoded.roleName)
     sessionStorage.setItem("auth", true)
     navigate("/")
   }
@@ -74,9 +75,7 @@ export const Login = () => {
       <div className="loginDesign">     
         <div className="separator"></div>
         <AuthInput
-          className={`authInputDesign ${
-          userError.userNameError !== "" ? "authInputDesignError" : ""
-          }`}
+          className="authInputDesign"
           type="email"
           name="email"
           placeholder="Escribe tu email"
@@ -86,9 +85,7 @@ export const Login = () => {
         />
         <div className="separator"></div>
         <AuthInput
-          className={`authInputDesign ${
-            userError.userNameError !== "" ? "authInputDesignError" : ""
-          }`}
+          className="authInputDesign"
           type="password"
           name="password"
           placeholder="Escribe tu password"

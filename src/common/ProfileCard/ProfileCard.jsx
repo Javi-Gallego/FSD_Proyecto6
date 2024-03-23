@@ -6,7 +6,7 @@ export const ProfileCard = ({ profile }) => {
 
   return (
     <article className="profileCardDesign">
-      <img src={profilePhoto} alt="profile" />
+      <img src={profile.profilePhoto} alt="profile" />
       <p>Nombre: 
         <FieldInput 
           type="text"

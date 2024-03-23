@@ -7,6 +7,8 @@ export const LogoutLink = ({ title }) => {
   const logoutMe = () => {
     sessionStorage.removeItem("token")
     sessionStorage.removeItem("user")
+    sessionStorage.removeItem("role")
+    sessionStorage.removeItem("firstName")
     sessionStorage.setItem("auth", false)
 
     navigate("/login")

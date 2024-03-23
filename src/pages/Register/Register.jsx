@@ -90,7 +90,7 @@ export const Register = () => {
           onChangeFunction={inputHandler}
           onBlurFunction={checkError}
         />
-        <div className="error">{userError.last_nameError}</div>
+        <div className="error">{userError.last_nameError}</div>        
         <AuthInput
           className={`authInputDesign ${
             userError.emailError !== "" ? "authInputDesignError" : ""
