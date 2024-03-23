@@ -17,10 +17,10 @@ export const loginMe = async (credentials) => {
     if (!data.success) {
       throw new Error(data.message)
     }
-    console.log(data)
+    
     return data
+
   } catch (error) {
-    console.log("error1: " + error)
     return error
   }
 }
@@ -44,8 +44,34 @@ export const registerMe = async (credentials) => {
     }
 
     return data.data
+
   } catch (error) {
-    console.log("error1: " + error)
+    return error
+  }
+}
+
+export const getProfile = async (token) => {
+
+  const options = {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": `Bearer ${token}`
+    }
+  }
+
+  try {
+    const response = await fetch(rootUrl + "users/profile", options)
+
+    const data = await response.json()
+
+    if (!data.success) {
+      throw new Error(data.message)
+    }
+
+    return data.data
+
+  } catch (error) {
     return error
   }
 }

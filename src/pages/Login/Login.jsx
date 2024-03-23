@@ -58,10 +58,9 @@ export const Login = () => {
       setMsgError(fetched.message)
       return
     }
-    console.log(fetched)
+
     const decoded = decodeToken(fetched.token)
-    console.log(decoded)
-    console.log(decoded.firstName)
+
     sessionStorage.setItem("token", fetched.token)
     sessionStorage.setItem("user", JSON.stringify(decoded))
     sessionStorage.setItem("firstName", decoded.firstName)
@@ -70,38 +69,40 @@ export const Login = () => {
   }
 
   return (
-    <div className="loginDesign">
+    <>
       <Header />
-      <div className="separator"></div>
-      <AuthInput
-        className={`authInputDesign ${
+      <div className="loginDesign">     
+        <div className="separator"></div>
+        <AuthInput
+          className={`authInputDesign ${
           userError.userNameError !== "" ? "authInputDesignError" : ""
-        }`}
-        type="email"
-        name="email"
-        placeholder="Escribe tu email"
-        value={credentials.email || ""}
-        onChangeFunction={inputHandler}
-        onBlurFunction={checkError}
-      />
-      <div className="separator"></div>
-      <AuthInput
-        className={`authInputDesign ${
-          userError.userNameError !== "" ? "authInputDesignError" : ""
-        }`}
-        type="password"
-        name="password"
-        placeholder="Escribe tu password"
-        value={credentials.password || ""}
-        onChangeFunction={inputHandler}
-        onBlurFunction={checkError}
-      />
-      <div className="separator"></div>
-      <AuthButton
-        text="Login"
-        functionClick={logMe}
-        currentClass="authButtonDesign glow-on-hover"
-      />
-    </div>
+          }`}
+          type="email"
+          name="email"
+          placeholder="Escribe tu email"
+          value={credentials.email || ""}
+          onChangeFunction={inputHandler}
+          onBlurFunction={checkError}
+        />
+        <div className="separator"></div>
+        <AuthInput
+          className={`authInputDesign ${
+            userError.userNameError !== "" ? "authInputDesignError" : ""
+          }`}
+          type="password"
+          name="password"
+          placeholder="Escribe tu password"
+          value={credentials.password || ""}
+          onChangeFunction={inputHandler}
+          onBlurFunction={checkError}
+        />
+        <div className="separator"></div>
+        <AuthButton
+          text="Login"
+          functionClick={logMe}
+          currentClass="authButtonDesign glow-on-hover"
+        />
+      </div>
+    </>
   )
 }

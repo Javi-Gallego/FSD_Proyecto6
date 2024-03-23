@@ -4,9 +4,12 @@ import "./Home.css"
 
 export const Home = () => {
   return (
-    <div className="homeDesign">
+    <>
       <Header />
-      <img src={Logo} alt="Inkspire"></img>
-    </div>
+      <div className="homeDesign">
+        <img src={Logo} alt="Inkspire"></img>
+      </div>
+    </>
+    
   )
 }

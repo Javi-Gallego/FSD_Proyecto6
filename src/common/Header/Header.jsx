@@ -12,7 +12,7 @@ export function Header() {
             title={sessionStorage.getItem("firstName")}
             destination="/profile"
           />
-          <HeaderLink title="Timeline" destination="/timeline" />
+          <HeaderLink title="Appointments" destination="/appointments" />
           <LogoutLink title="logout" />
         </>
       ) : (

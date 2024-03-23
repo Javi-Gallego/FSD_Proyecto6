@@ -1,0 +1,18 @@
+.profileCardDesign {
+  height: auto;
+  width: 20em;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 2em;
+
+  background-color: black;
+  color: white;
+}
+
+.profileCardDesign img {
+  height: 10em;
+  width: 10em;
+}

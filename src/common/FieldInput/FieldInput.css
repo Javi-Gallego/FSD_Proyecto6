@@ -1,0 +1,22 @@
+.fieldInputDesign {
+    width: 15vw;
+    height: 4vh;
+  
+    border-radius: 0.5em;
+    border: 0.2em solid black;
+    font-size: 1rem;
+    background-color: rgb(50, 42, 165);
+  }
+  
+  .fieldInputDesignError {
+    border: 0.2em solid red;
+  }
+  
+  .fieldInputDesign:focus {
+    border: 0.2em solid rgb(0, 26, 255);
+    outline: none;
+  }
+
+  .enabledInput {
+    background-color: white;
+  }
