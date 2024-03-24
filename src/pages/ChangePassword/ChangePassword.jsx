@@ -4,12 +4,25 @@ import { FieldInput } from "../../common/FieldInput/FieldInput"
 import "./ChangePassword.css"
 import { validate } from "../../utils/functions"
 import { Header } from "../../common/Header/Header"
+import { updateProfile } from "../../services/apiCalls"
+import { useNavigate } from "react-router-dom"
 
 export const ChangePassword = () => {
+  const navigate = useNavigate()
+
   const [bodyPassword, setBodyPassword] = useState({
-    password: "",
-    password1: ""
+    newPass: "",
+    repeatPass: "",
+    currentPass: ""
   })
+
+  const [bodyPasswordError, setBodyPasswordError] = useState({
+    newPassError: "",
+    repeatPassError: "",
+    currentPassError: ""
+  })
+
+  const [updatedOK, setUpdatedOK] = useState(false)
 
   const inputHandler = (e) => {
     setBodyPassword((prevState) => ({
@@ -21,7 +34,7 @@ export const ChangePassword = () => {
   const checkError = (e) => {
     const error = validate(e.target.name, e.target.value)
 
-    setProfileError((prevState) => ({
+    setBodyPasswordError((prevState) => ({
       ...prevState,
       [e.target.name + "Error"]: error
     }))
@@ -29,20 +42,44 @@ export const ChangePassword = () => {
 
   const changePass = async () => {
     try {
-      const updatedPass = await changePassword(bodyPassword)
+      const token = sessionStorage.getItem("token")
+
+      if (bodyPassword.newPass !== bodyPassword.repeatPass) {
+        return
+      }
+      const toChangePass = {
+        newPass: bodyPassword.newPass,
+        currentPass: bodyPassword.currentPass
+      }
+      console.log(toChangePass)
+      const hola = JSON.stringify(toChangePass)
+        console.log(hola)
+      const updatedPass = await updateProfile(token, toChangePass)
+
+      setUpdatedOK(true)
+
+      setTimeout(() => {
+        navigate("/profile")
+      }, 2000)
+
+      navigate("/profile")
     } catch (error) {}
   }
 
   return (
     <>
       <Header />
-      <div className="changePassword">
-        <h1>Cambio de password</h1>
+      <div className="changePasswordDesign">
+        <h1>
+          {updatedOK
+            ? "El cambio de password ha sido exitoso"
+            : "Cambio de password"}
+        </h1>
         <p>Intruduzca el nuevo password</p>
         <FieldInput
           type="password"
-          name="password"
-          value=""
+          name="newPass"
+          value={bodyPassword.newPass || ""}
           disabled=""
           onChangeFunction={inputHandler}
           onBlur={checkError}
@@ -51,8 +88,8 @@ export const ChangePassword = () => {
         <p>Repita el nuevo password</p>
         <FieldInput
           type="password"
-          name="password1"
-          value=""
+          name="repeatPass"
+          value={bodyPassword.repeatPass || ""}
           disabled=""
           onChangeFunction={inputHandler}
           onBlur={checkError}
@@ -61,8 +98,8 @@ export const ChangePassword = () => {
         <p>Intruduzca el password actual</p>
         <FieldInput
           type="password"
-          name="password2"
-          value=""
+          name="currentPass"
+          value={bodyPassword.currentPass || ""}
           disabled=""
           onChangeFunction={inputHandler}
           onBlur={checkError}
