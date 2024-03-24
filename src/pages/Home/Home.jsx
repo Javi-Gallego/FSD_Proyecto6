@@ -1,6 +1,6 @@
-import { Header } from "../../common/Header/Header"
-import Logo from "../../img/logocuadrado.png"
-import "./Home.css"
+import { Header } from "../../common/Header/Header";
+import Logo from "../../img/logocuadrado.png";
+import "./Home.css";
 
 export const Home = () => {
   return (
@@ -10,6 +10,5 @@ export const Home = () => {
         <img src={Logo} alt="Inkspire"></img>
       </div>
     </>
-    
-  )
-}
+  );
+};

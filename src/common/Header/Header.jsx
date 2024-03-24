@@ -15,14 +15,14 @@ export function Header() {
           />
           {sessionStorage.getItem("role") === "super_admin"
            ? (
-            <HeaderLink title="Appointments" destination="/adminappointments" />
+            <HeaderLink title="Citas" destination="/adminappointments" />
            )
             : ( sessionStorage.getItem("role") === "tattoo_artist"
                 ? (
-                  <HeaderLink title="Work" destination="/artistappointments" />
+                  <HeaderLink title="Trabajos" destination="/artistappointments" />
                 )
                 : (
-                  <HeaderLink title="Appointments" destination="/userappointments" />
+                  <HeaderLink title="Citas" destination="/Appointments" />
                 )
             )
           }

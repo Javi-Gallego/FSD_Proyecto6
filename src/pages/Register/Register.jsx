@@ -1,66 +1,66 @@
-import { useState } from "react"
-import { AuthButton } from "../../common/AuthButton/AuthButton"
-import { AuthInput } from "../../common/AuthInput/AuthInput"
-import { Header } from "../../common/Header/Header"
-import { registerMe } from "../../services/apiCalls"
-import "./Register.css"
-import { useNavigate } from "react-router-dom"
-import { validate } from "../../utils/functions"
+import { useState } from "react";
+import { AuthButton } from "../../common/AuthButton/AuthButton";
+import { AuthInput } from "../../common/AuthInput/AuthInput";
+import { Header } from "../../common/Header/Header";
+import { registerMe } from "../../services/apiCalls";
+import "./Register.css";
+import { useNavigate } from "react-router-dom";
+import { validate } from "../../utils/functions";
 
 export const Register = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const [credentials, setCredentials] = useState({
     first_name: "",
     last_name: "",
     email: "",
-    password: ""
-  })
+    password: "",
+  });
 
   const [userError, setUserError] = useState({
     first_nameError: "",
     last_nameError: "",
     emailError: "",
-    passwordError: ""
-  })
+    passwordError: "",
+  });
 
-  const [msgError, setMsgError] = useState("")
+  const [msgError, setMsgError] = useState("");
 
   const checkError = (e) => {
-    const error = validate(e.target.name, e.target.value)
+    const error = validate(e.target.name, e.target.value);
 
     setUserError((prevState) => ({
       ...prevState,
-      [e.target.name + "Error"]: error
-    }))
-  }
+      [e.target.name + "Error"]: error,
+    }));
+  };
 
-  let fetched = {}
+  let fetched = {};
 
   const inputHandler = (e) => {
     setCredentials((prevState) => ({
       ...prevState,
-      [e.target.name]: e.target.value
-    }))
-  }
+      [e.target.name]: e.target.value,
+    }));
+  };
 
   const regUser = async () => {
     for (let credential in credentials) {
       if (credentials[credential] === "") {
-        setMsgError("No has rellenado todos los campos")
-        return
+        setMsgError("No has rellenado todos los campos");
+        return;
       }
     }
 
-    fetched = await registerMe(credentials)
+    fetched = await registerMe(credentials);
 
     if (!fetched.success) {
-      setMsgError(fetched.message)
-      return
+      setMsgError(fetched.message);
+      return;
     }
 
-    navigate("/registerSuccess")
-  }
+    navigate("/registerSuccess");
+  };
 
   return (
     <>
@@ -90,7 +90,7 @@ export const Register = () => {
           onChangeFunction={inputHandler}
           onBlurFunction={checkError}
         />
-        <div className="error">{userError.last_nameError}</div>        
+        <div className="error">{userError.last_nameError}</div>
         <AuthInput
           className={`authInputDesign ${
             userError.emailError !== "" ? "authInputDesignError" : ""
@@ -123,5 +123,5 @@ export const Register = () => {
         <div className="error">{msgError}</div>
       </div>
     </>
-  )
-}
+  );
+};

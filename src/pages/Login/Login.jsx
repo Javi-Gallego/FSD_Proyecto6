@@ -1,78 +1,78 @@
-import { useState, useEffect } from "react"
-import { AuthButton } from "../../common/AuthButton/AuthButton"
-import { AuthInput } from "../../common/AuthInput/AuthInput"
-import { Header } from "../../common/Header/Header"
-import { useNavigate } from "react-router-dom"
-import { decodeToken } from "react-jwt"
-import { loginMe } from "../../services/apiCalls"
+import { useState, useEffect } from "react";
+import { AuthButton } from "../../common/AuthButton/AuthButton";
+import { AuthInput } from "../../common/AuthInput/AuthInput";
+import { Header } from "../../common/Header/Header";
+import { useNavigate } from "react-router-dom";
+import { decodeToken } from "react-jwt";
+import { loginMe } from "../../services/apiCalls";
 
-import "./Login.css"
-import { validate } from "../../utils/functions"
+import "./Login.css";
+import { validate } from "../../utils/functions";
 
 export const Login = () => {
   const [credentials, setCredentials] = useState({
     email: "",
-    password: ""
-  })
+    password: "",
+  });
 
   const [userError, setUserError] = useState({
     userNameError: "",
     emailError: "",
-    passwordError: ""
-  })
+    passwordError: "",
+  });
 
-  const [msgError, setMsgError] = useState("")
+  const [msgError, setMsgError] = useState("");
 
   const checkError = (e) => {
-    const error = validate(e.target.name, e.target.value)
+    const error = validate(e.target.name, e.target.value);
 
     setUserError((prevState) => ({
       ...prevState,
-      [e.target.name + "Error"]: error
-    }))
-  }
+      [e.target.name + "Error"]: error,
+    }));
+  };
 
-  let fetched = {}
-  sessionStorage.setItem("auth", false)
+  let fetched = {};
+  sessionStorage.setItem("auth", false);
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const inputHandler = (e) => {
     setCredentials((fields) => ({
       ...fields,
-      [e.target.name]: e.target.value
-    }))
-  }
+      [e.target.name]: e.target.value,
+    }));
+  };
 
   const logMe = async () => {
     for (let credential in credentials) {
       if (credentials[credential] === "") {
-        setMsgError("No has rellenado todos los campos")
-        return
+        setMsgError("No has rellenado todos los campos");
+        return;
       }
     }
 
-    fetched = await loginMe(credentials)
+    fetched = await loginMe(credentials);
 
     if (!fetched.success) {
-      setMsgError(fetched.message)
-      return
+      setMsgError(fetched.message);
+      return;
     }
 
-    const decoded = decodeToken(fetched.token)
+    const decoded = decodeToken(fetched.token);
 
-    sessionStorage.setItem("token", fetched.token)
-    sessionStorage.setItem("user", JSON.stringify(decoded))
-    sessionStorage.setItem("firstName", decoded.firstName)
-    sessionStorage.setItem("role", decoded.roleName)
-    sessionStorage.setItem("auth", true)
-    navigate("/")
-  }
+    sessionStorage.setItem("token", fetched.token);
+    sessionStorage.setItem("user", JSON.stringify(decoded));
+    sessionStorage.setItem("firstName", decoded.firstName);
+    sessionStorage.setItem("role", decoded.roleName);
+    sessionStorage.setItem("auth", true);
+    navigate("/");
+  };
 
   return (
     <>
       <Header />
-      <div className="loginDesign">     
+      <div className="loginDesign">
         <div className="separator"></div>
         <AuthInput
           className="authInputDesign"
@@ -101,5 +101,5 @@ export const Login = () => {
         />
       </div>
     </>
-  )
-}
+  );
+};

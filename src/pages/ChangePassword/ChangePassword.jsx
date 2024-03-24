@@ -1,70 +1,75 @@
-import { useState } from "react"
-import { Button } from "../../common/Button/Button"
-import { FieldInput } from "../../common/FieldInput/FieldInput"
-import "./ChangePassword.css"
-import { validate } from "../../utils/functions"
-import { Header } from "../../common/Header/Header"
-import { updateProfile } from "../../services/apiCalls"
-import { useNavigate } from "react-router-dom"
+import { useState } from "react";
+import { Button } from "../../common/Button/Button";
+import { FieldInput } from "../../common/FieldInput/FieldInput";
+import "./ChangePassword.css";
+import { validate } from "../../utils/functions";
+import { Header } from "../../common/Header/Header";
+import { updateProfile } from "../../services/apiCalls";
+import { useNavigate } from "react-router-dom";
 
 export const ChangePassword = () => {
-  const navigate = useNavigate()
+  
+    if (sessionStorage.getItem("auth") === "false") {
+    navigate("/");
+  }
+
+  const navigate = useNavigate();
 
   const [bodyPassword, setBodyPassword] = useState({
     newPass: "",
     repeatPass: "",
-    currentPass: ""
-  })
+    currentPass: "",
+  });
 
   const [bodyPasswordError, setBodyPasswordError] = useState({
     newPassError: "",
     repeatPassError: "",
-    currentPassError: ""
-  })
+    currentPassError: "",
+  });
 
-  const [updatedOK, setUpdatedOK] = useState(false)
+  const [updatedOK, setUpdatedOK] = useState(false);
 
   const inputHandler = (e) => {
     setBodyPassword((prevState) => ({
       ...prevState,
-      [e.target.name]: e.target.value
-    }))
-  }
+      [e.target.name]: e.target.value,
+    }));
+  };
 
   const checkError = (e) => {
-    const error = validate(e.target.name, e.target.value)
+    const error = validate(e.target.name, e.target.value);
 
     setBodyPasswordError((prevState) => ({
       ...prevState,
-      [e.target.name + "Error"]: error
-    }))
-  }
+      [e.target.name + "Error"]: error,
+    }));
+  };
 
   const changePass = async () => {
     try {
-      const token = sessionStorage.getItem("token")
+      const token = sessionStorage.getItem("token");
 
       if (bodyPassword.newPass !== bodyPassword.repeatPass) {
-        return
+        return;
       }
       const toChangePass = {
         newPass: bodyPassword.newPass,
-        currentPass: bodyPassword.currentPass
-      }
-      console.log(toChangePass)
-      const hola = JSON.stringify(toChangePass)
-        console.log(hola)
-      const updatedPass = await updateProfile(token, toChangePass)
+        currentPass: bodyPassword.currentPass,
+      };
+      console.log(toChangePass);
+      const hola = JSON.stringify(toChangePass);
+      console.log(hola);
+      const updatedPass = await updateProfile(token, toChangePass);
 
-      setUpdatedOK(true)
+      setUpdatedOK(true);
 
       setTimeout(() => {
-        navigate("/profile")
-      }, 2000)
+        navigate("/profile");
+      }, 2000);
 
-      navigate("/profile")
+      navigate("/profile");
     } catch (error) {}
-  }
+  };
 
   return (
     <>
@@ -112,5 +117,5 @@ export const ChangePassword = () => {
         />
       </div>
     </>
-  )
-}
+  );
+};
