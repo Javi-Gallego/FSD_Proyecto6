@@ -12,7 +12,7 @@ export const Appointments = () => {
   const [firstFetch, setFirstFetch] = useState(false);
   const [token, setToken] = useState(sessionStorage.getItem("token"));
   const [appointments, setAppointments] = useState([]);
-  const [appointmentDetailsOff, setAppointmentDetailsOff] = useState(true);
+  const [appointmentDetailsOn, setAppointmentDetailsOn] = useState("");
   const [detailsCreateAppointmentOff, setDetailsCreateAppointmentOff] =
     useState(true);
   const [filters, setFilters] = useState({
@@ -43,14 +43,17 @@ export const Appointments = () => {
       //   }
       setAppointments(newappointments);
       setFirstFetch(true);
-      console.log(appointments);
-      console.log("newappointments array?", Array.isArray(newappointments));
-      console.log("appointments array?", Array.isArray(appointments));
+
     } catch (error) {}
   };
 
-  const detailsAppointment = () => {
-    setAppointmentDetailsOff(!appointmentDetailsOff);
+  const detailsAppointment = (index) => {
+    if (appointmentDetailsOn === index) {
+      setAppointmentDetailsOn("");
+      return;
+    }
+    setAppointmentDetailsOn(index);
+
   };
 
   const detailsCreateAppointment = () => {
@@ -78,11 +81,22 @@ export const Appointments = () => {
                   "DD MMM YYYY HH:MM"
                 );
                 return (
-                  <div key={index} className="appointmentCard" onClick={detailsAppointment}>
-                    {appointmentDetailsOff ? (
+                  <div key={index} className="appointmentCard" onClick={() => detailsAppointment(index)}>
+                    {appointmentDetailsOn !== index ? (
                       <div>{date}</div>
                     ) : (
-                      <div>Aquí hay muchos detalles</div>
+                      <div>
+                        <div>{date}</div>
+                        <div>{appointment.service.serviceName}</div>
+                        {appointment.artist && 
+                          <div>Tatuador: {appointment.artist.firstName}</div>}
+                        {appointment.catalog && 
+                            <div>
+                                <div>Tatuaje: {appointment.catalog.tattooName}</div>
+                                <img src={appointment.catalog.urlImage}></img>
+                            </div>
+                        }
+                      </div>
                     )}
                   </div>
                 );
