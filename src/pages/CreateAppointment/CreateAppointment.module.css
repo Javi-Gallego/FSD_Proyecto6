@@ -1,0 +1,47 @@
+.root {
+  position: relative;
+  margin: 0;
+  background-color: rgb(4, 10, 36);
+  border-radius: 1em;
+  border: 0.05em solid white;
+}
+.root:hover {
+  background-color: rgb(20, 46, 160);
+  border: 0.1em solid white;
+}
+.input {
+  margin: 0;
+  border-radius: 0 0 1em 1em;
+  background-color: rgb(4, 10, 36);
+  color: white;
+}
+.calendarHeader {
+  height: 4em;
+
+  margin: 0;
+}
+.calendarHeaderControl {
+  height: 2em;
+  background-color: rgb(255, 255, 255);
+}
+.calendarHeaderControlIcon {
+  height: 1.5em;
+  margin: 0;
+}
+.timeWrapper {
+  height: 3em;
+  margin: 0;
+}
+.timeInput {
+  height: 3em;
+  width: 4em;
+  margin: 0;
+}
+.submitButton {
+  height: 3em;
+  width: 5em;
+  margin: 0;
+}
+.month {
+background-color: rgb(125, 159, 253);
+}

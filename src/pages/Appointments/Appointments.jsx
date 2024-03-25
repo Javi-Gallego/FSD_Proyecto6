@@ -3,8 +3,12 @@ import { Header } from "../../common/Header/Header";
 import "./Appointments.css";
 import { getAppointments } from "../../services/apiCalls";
 import dayjs from "dayjs";
+import { DateTimePicker } from "@mantine/dates";
+import { Button } from "@mantine/core";
+import { useNavigate } from "react-router-dom";
 
 export const Appointments = () => {
+    const navigate = useNavigate();
   if (sessionStorage.getItem("auth") === "false") {
     navigate("/");
   }
@@ -57,18 +61,18 @@ export const Appointments = () => {
   };
 
   const detailsCreateAppointment = () => {
-    setDetailsCreateAppointmentOff(!detailsCreateAppointmentOff);
+    setDetailsCreateAppointmentOff(false);
   };
+  const createAppointment = () => {
+    navigate("/createappointment");
+  }
 
   return (
     <>
       <Header />
       <article className="appointmentsDesign">
-        <div className="createAppointment" onClick={detailsCreateAppointment}>
+        <div className="createAppointment" onClick={createAppointment}>
           Crear cita nueva
-          {!detailsCreateAppointmentOff &&
-          <div> Aqui las cosas para crear una cita</div>
-          }
         </div>
         <div className="separator"></div>
         {appointments.length === 0 ? (

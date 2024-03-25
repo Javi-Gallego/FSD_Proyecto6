@@ -1,0 +1,23 @@
+.createAppointmentDesign {
+  height: auto;
+  min-height: 90vh;
+  width: 100vw;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  background-color: rgb(4, 10, 36);
+  color: white;
+  font-weight: bold;
+}
+
+.relative{
+  position: relative;
+}
+
+.separator{
+    height: 1em;
+}
+
