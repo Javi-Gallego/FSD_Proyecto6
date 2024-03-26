@@ -70,10 +70,10 @@ export const Appointments = () => {
   return (
     <>
       <Header />
-      <article className="appointmentsDesign">
-        <div className="createAppointment" onClick={createAppointment}>
+      <section className="appointmentsDesign">
+        <article className="createAppointment" onClick={createAppointment}>
           Crear cita nueva
-        </div>
+        </article>
         <div className="separator"></div>
         {appointments.length === 0 ? (
           <div className="noAppointments">No hay ninguna cita pendiente</div>
@@ -85,7 +85,7 @@ export const Appointments = () => {
                   "DD MMM YYYY HH:MM"
                 );
                 return (
-                  <div key={index} className="appointmentCard" onClick={() => detailsAppointment(index)}>
+                  <article key={index} className="appointmentCard" onClick={() => detailsAppointment(index)}>
                     {appointmentDetailsOn !== index ? (
                       <div>{date}</div>
                     ) : (
@@ -98,11 +98,12 @@ export const Appointments = () => {
                             <div>
                                 <div>Tatuaje: {appointment.catalog.tattooName}</div>
                                 <img src={appointment.catalog.urlImage}></img>
+
                             </div>
                         }
                       </div>
                     )}
-                  </div>
+                  </article>
                 );
               })
             ) : (
@@ -110,7 +111,7 @@ export const Appointments = () => {
             );
           })()
         )}
-      </article>
+      </section>
     </>
   );
 };

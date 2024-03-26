@@ -4,6 +4,7 @@ import { DateTimePicker } from "@mantine/dates";
 import { Button } from "../../common/Button/Button";
 import { Header } from "../../common/Header/Header";
 import classes from "./CreateAppointment.module.css";
+import "@mantine/dates/styles.css";
 
 export const CreateAppointment = () => {
   return (
@@ -22,11 +23,14 @@ export const CreateAppointment = () => {
           <DateTimePicker
             label="Elige una fecha"
             placeholder="pulsa para elegir fecha"
-            popoverPosition="right"
+            popoverPosition="bottom"
             popoverSize="md"
+            // popoveroffset={5}
+            popoverProps={{ withinPortal: false }}
             classNames={{
               root: classes.root,
               input: classes.input,
+              inputWrapper: classes.inputWrapper,
               calendarHeader: classes.calendarHeader,
               calendarHeaderControl: classes.calendarHeaderControl,
               calendarHeaderControlIcon: classes.calendarHeaderControlIcon,

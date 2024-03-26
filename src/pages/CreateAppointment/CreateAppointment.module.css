@@ -15,6 +15,10 @@
   background-color: rgb(4, 10, 36);
   color: white;
 }
+/* .inputWrapper {
+  margin: 0;
+  width: 20em;
+} */
 .calendarHeader {
   height: 4em;
 
