@@ -1,27 +1,27 @@
 .root {
   position: relative;
   margin: 0;
-  background-color: rgb(4, 10, 36);
-  border-radius: 1em;
+    width: auto;
+  background-color: transparent;
+  border-radius: 0.5em;
   border: 0.05em solid white;
 }
 .root:hover {
-  background-color: rgb(20, 46, 160);
+  /* background-color: rgb(20, 46, 160); */
   border: 0.1em solid white;
 }
 .input {
   margin: 0;
-  border-radius: 0 0 1em 1em;
   background-color: rgb(4, 10, 36);
   color: white;
 }
-/* .inputWrapper {
+.inputWrapper {
   margin: 0;
-  width: 20em;
-} */
+  height: 3em;
+}
 .calendarHeader {
+background-color: white;
   height: 4em;
-
   margin: 0;
 }
 .calendarHeaderControl {
@@ -38,8 +38,7 @@
 }
 .timeInput {
   height: 3em;
-  width: 4em;
-  margin: 0;
+  width: 3em;
 }
 .submitButton {
   height: 3em;
@@ -48,4 +47,8 @@
 }
 .month {
 background-color: rgb(125, 159, 253);
+}
+.mantine-Popover-dropdown{
+  /* object-fit: contain; */
+  display: block;
 }

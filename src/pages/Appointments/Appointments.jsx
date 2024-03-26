@@ -3,12 +3,14 @@ import { Header } from "../../common/Header/Header";
 import "./Appointments.css";
 import { getAppointments } from "../../services/apiCalls";
 import dayjs from "dayjs";
+import "dayjs/locale/es";
 import { DateTimePicker } from "@mantine/dates";
 import { Button } from "@mantine/core";
 import { useNavigate } from "react-router-dom";
 
 export const Appointments = () => {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
+  dayjs.locale("es");
   if (sessionStorage.getItem("auth") === "false") {
     navigate("/");
   }
@@ -26,7 +28,6 @@ export const Appointments = () => {
 
   useEffect(() => {
     if (!firstFetch) {
-      //   fetchAppointments();
     }
   }, []);
 
@@ -47,7 +48,6 @@ export const Appointments = () => {
       //   }
       setAppointments(newappointments);
       setFirstFetch(true);
-
     } catch (error) {}
   };
 
@@ -57,7 +57,6 @@ export const Appointments = () => {
       return;
     }
     setAppointmentDetailsOn(index);
-
   };
 
   const detailsCreateAppointment = () => {
@@ -65,7 +64,7 @@ export const Appointments = () => {
   };
   const createAppointment = () => {
     navigate("/createappointment");
-  }
+  };
 
   return (
     <>
@@ -85,22 +84,26 @@ export const Appointments = () => {
                   "DD MMM YYYY HH:MM"
                 );
                 return (
-                  <article key={index} className="appointmentCard" onClick={() => detailsAppointment(index)}>
+                  <article
+                    key={index}
+                    className="appointmentCard"
+                    onClick={() => detailsAppointment(index)}
+                  >
                     {appointmentDetailsOn !== index ? (
                       <div>{date}</div>
                     ) : (
                       <div>
                         <div>{date}</div>
                         <div>{appointment.service.serviceName}</div>
-                        {appointment.artist && 
-                          <div>Tatuador: {appointment.artist.firstName}</div>}
-                        {appointment.catalog && 
-                            <div>
-                                <div>Tatuaje: {appointment.catalog.tattooName}</div>
-                                <img src={appointment.catalog.urlImage}></img>
-
-                            </div>
-                        }
+                        {appointment.artist && (
+                          <div>Tatuador: {appointment.artist.firstName}</div>
+                        )}
+                        {appointment.catalog && (
+                          <div>
+                            <div>Tatuaje: {appointment.catalog.tattooName}</div>
+                            <img src={appointment.catalog.urlImage}></img>
+                          </div>
+                        )}
                       </div>
                     )}
                   </article>

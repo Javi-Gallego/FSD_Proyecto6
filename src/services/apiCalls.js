@@ -120,3 +120,29 @@ export const getAppointments = async (token, filters) => {
     return error;
   }
 };
+
+export const createAppointment = async (token, appointment) => {
+  const options = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify(appointment),
+  };
+
+  try {
+    const response = await fetch(rootUrl + "appointments", options);
+
+    const data = await response.json();
+
+    if (!data.success) {
+      throw new Error(data.message);
+    }
+
+    return data.data;
+  } catch (error) {
+    console.log(error);
+    return error;
+  }
+}
