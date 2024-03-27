@@ -86,7 +86,7 @@ export const updateProfile = async (token, profile) => {
     const response = await fetch(rootUrl + "users/profile", options);
 
     const data = await response.json();
-    console.log(data);
+
     if (!data.success) {
       throw new Error(data.message);
     }
@@ -144,7 +144,7 @@ export const createAppointment = async (token, appointment) => {
   } catch (error) {
     return error;
   }
-}
+};
 
 export const deleteAppointment = async (token, appointmentId) => {
   const options = {
@@ -156,7 +156,10 @@ export const deleteAppointment = async (token, appointmentId) => {
   };
 
   try {
-    const response = await fetch(rootUrl + `appointments/${appointmentId}`, options);
+    const response = await fetch(
+      rootUrl + `appointments/${appointmentId}`,
+      options
+    );
 
     const data = await response.json();
 
@@ -168,4 +171,50 @@ export const deleteAppointment = async (token, appointmentId) => {
   } catch (error) {
     return error;
   }
-}
+};
+
+export const getServices = async () => {
+  const options = {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  };
+
+  try {
+    const response = await fetch(rootUrl + "services", options);
+
+    const data = await response.json();
+
+    if (!data.success) {
+      throw new Error(data.message);
+    }
+
+    return data.data;
+  } catch (error) {
+    return error;
+  }
+};
+
+export const getCatalog = async () => {
+  const options = {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  };
+
+  try {
+    const response = await fetch(rootUrl + "catalog", options);
+
+    const data = await response.json();
+
+    if (!data.success) {
+      throw new Error(data.message);
+    }
+
+    return data.data;
+  } catch (error) {
+    return error;
+  }
+};

@@ -1,0 +1,39 @@
+.servicesDesign {
+  height: auto;
+  min-height: 90vh;
+  width: 100vw;
+
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background-color: rgb(4, 10, 36);
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.title {
+  height: 1.8em;
+  width: 20em;
+  border-radius: 0.5em;
+  text-align: center;
+  font-weight: bold;
+  background-color: white;
+  color: rgb(4, 10, 36);
+}
+.description {
+  height: auto;
+  width: 80vw;
+  font-weight: bold;
+  color: white;
+}
+.separator {
+  height: 2em;
+  width: 90vw;
+}

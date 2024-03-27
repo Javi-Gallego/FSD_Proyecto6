@@ -10,4 +10,5 @@ body {
   justify-self: center;
   align-items: center;
   user-select: none;
+  overflow-x: hidden;
 }

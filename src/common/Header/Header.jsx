@@ -9,10 +9,11 @@ export function Header() {
         ? (
         <>
           <HeaderLink title="Home" destination="/" />
+          <HeaderLink title="Servicios" destination="/services" />
+          <HeaderLink title="Catalogo" destination="/catalog" />
           <HeaderLink
             title={sessionStorage.getItem("firstName")}
-            destination="/profile"
-          />
+            destination="/profile" />
           {sessionStorage.getItem("role") === "super_admin"
            ? (
             <HeaderLink title="Citas" destination="/adminappointments" />
@@ -34,6 +35,8 @@ export function Header() {
       ) : (
         <>
           <HeaderLink title="Home" destination="/" />
+          <HeaderLink title="Servicios" destination="/services" />
+          <HeaderLink title="Catalogo" destination="/catalog" />
           <HeaderLink title="Register" destination="/register" />
           <HeaderLink title="Login" destination="/login" />
         </>

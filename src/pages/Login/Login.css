@@ -1,5 +1,6 @@
 .loginDesign {
-  height: 90vh;
+  height: auto;
+  min-height: 90vh;
   width: 100vw;
 
   display: flex;

@@ -6,6 +6,8 @@ import { Profile } from "../Profile/Profile";
 import { ChangePassword } from "../ChangePassword/ChangePassword";
 import { Appointments } from "../Appointments/Appointments";
 import { CreateAppointment } from "../CreateAppointment/CreateAppointment";
+import { Services } from "../Services/Services";
+import { Catalog } from "../Catalog/Catalog";
 
 export const Body = () => {
   return (
@@ -17,6 +19,8 @@ export const Body = () => {
       <Route path="/appointments" element={<Appointments />} />
       <Route path="/createappointment" element={<CreateAppointment />} />
       <Route path="/changepassword" element={<ChangePassword />} />
+      <Route path="/services" element={<Services />} />
+      <Route path="/catalog" element={<Catalog />} />
       <Route path="*" element={<Navigate to={"/"} replace />} />
     </Routes>
   );

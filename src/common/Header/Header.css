@@ -6,6 +6,7 @@
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
+  padding-right: 2em;
 
   background-color: rgb(247, 247, 247);
 }
