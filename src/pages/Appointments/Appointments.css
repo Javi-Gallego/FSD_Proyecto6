@@ -56,3 +56,9 @@
 .separator {
   height: 2em;
 }
+
+.eliminar img {
+  width: 2em;
+  height: auto;
+  cursor: pointer;
+}

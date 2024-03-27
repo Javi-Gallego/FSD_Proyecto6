@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import { Header } from "../../common/Header/Header";
 import "./Appointments.css";
-import { getAppointments } from "../../services/apiCalls";
+import { deleteAppointment, getAppointments } from "../../services/apiCalls";
 import dayjs from "dayjs";
 import "dayjs/locale/es";
 import { DateTimePicker } from "@mantine/dates";
 import { Button } from "@mantine/core";
 import { useNavigate } from "react-router-dom";
+import papelera from "../../img/papelera.png";
 
 export const Appointments = () => {
   const navigate = useNavigate();
@@ -40,12 +41,6 @@ export const Appointments = () => {
   const fetchAppointments = async () => {
     try {
       const newappointments = await getAppointments(token, filters);
-      //   if (cont === 0) {
-      //     newappointments.map((appointment) => {
-      //       setAppointments(appointments.push(appointment));
-      //     });
-      //     cont++;
-      //   }
       setAppointments(newappointments);
       setFirstFetch(true);
     } catch (error) {}
@@ -65,6 +60,16 @@ export const Appointments = () => {
   const createAppointment = () => {
     navigate("/createappointment");
   };
+
+  const removeAppointment = async (appointmentId) => {
+    try {
+      await deleteAppointment(token, appointmentId);
+      const updatedAppointments = appointments.filter( appointment => appointment.id !== appointmentId);
+      setAppointments(updatedAppointments);
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
   return (
     <>
@@ -104,7 +109,11 @@ export const Appointments = () => {
                             <img src={appointment.catalog.urlImage}></img>
                           </div>
                         )}
+                        <div className="eliminar" onClick={() => removeAppointment(appointment.id)}>
+                          <img src={papelera}></img>
+                        </div>
                       </div>
+                      
                     )}
                   </article>
                 );

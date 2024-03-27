@@ -28,16 +28,46 @@ export const CreateAppointment = () => {
   });
 
   useEffect(() => {
+    if (sessionStorage.getItem("auth") === "false") {
+      navigate("/");
+    }
     if (appointment.date !== selectedDate) {
       handleDate();
     }
   }, [selectedDate]);
 
   const inputHandler = (e) => {
-    setAppointment((prevState) => ({
-      ...prevState,
-      [e.target.name]: parseInt(e.target.value),
-    }));
+    // If the service doesn't require a tattoo artist or a catalog tattoo, we set the value to null
+    if (
+      e.target.name === "serviceId" &&
+      (e.target.value === "4" || e.target.value === "5")
+    ) {
+      setAppointment((prevState) => ({
+        ...prevState,
+        [e.target.name]: parseInt(e.target.value),
+        artistId: null,
+        catalogId: null,
+      }));
+    } else if (
+      e.target.name === "serviceId" &&
+      (e.target.value === "1" || e.target.value === "3")
+    ) {
+      setAppointment((prevState) => ({
+        ...prevState,
+        [e.target.name]: parseInt(e.target.value),
+        catalogId: null,
+      }));
+    } else if (e.target.name === "serviceId" && e.target.value === "2") {
+      setAppointment((prevState) => ({
+        ...prevState,
+        [e.target.name]: parseInt(e.target.value),
+      }));
+    } else if (e.target.name !== "serviceId") {
+      setAppointment((prevState) => ({
+        ...prevState,
+        [e.target.name]: parseInt(e.target.value),
+      }));
+    }
   };
 
   const handleDate = () => {
@@ -46,14 +76,13 @@ export const CreateAppointment = () => {
       ...prevState,
       date: formattedDate,
     }));
-    console.log("handleDate");
   };
 
   const sendAppointment = async () => {
     const appointmentToSend = Object.fromEntries(
       Object.entries(appointment).filter(([key, value]) => value !== null)
     );
-    console.log(JSON.stringify(appointmentToSend));
+
     try {
       await createAppointment(token, appointmentToSend);
       navigate("/appointments");
@@ -61,7 +90,6 @@ export const CreateAppointment = () => {
       console.log(error);
     }
   };
-  console.log(appointment);
   return (
     <>
       <Header />
@@ -85,9 +113,9 @@ export const CreateAppointment = () => {
             value={selectedDate}
             onChange={setSelectedDate}
             onClose={handleDate}
-            popoverPosition="left"
+            popoverposition="left"
             size="sm"
-            popoverSize="sm"
+            popoversize="sm"
             popoveroffset={5}
             popoverProps={{ withinPortal: false }}
             classNames={{
