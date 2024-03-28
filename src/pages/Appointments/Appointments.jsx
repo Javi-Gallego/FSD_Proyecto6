@@ -4,8 +4,6 @@ import "./Appointments.css";
 import { deleteAppointment, getAppointments } from "../../services/apiCalls";
 import dayjs from "dayjs";
 import "dayjs/locale/es";
-import { DateTimePicker } from "@mantine/dates";
-import { Button } from "@mantine/core";
 import { useNavigate } from "react-router-dom";
 import papelera from "../../img/papelera.png";
 
@@ -15,13 +13,12 @@ export const Appointments = () => {
   if (sessionStorage.getItem("auth") === "false") {
     navigate("/");
   }
-  let cont = 0;
+
   const [firstFetch, setFirstFetch] = useState(false);
   const [token, setToken] = useState(sessionStorage.getItem("token"));
   const [appointments, setAppointments] = useState([]);
   const [appointmentDetailsOn, setAppointmentDetailsOn] = useState("");
-  const [detailsCreateAppointmentOff, setDetailsCreateAppointmentOff] =
-    useState(true);
+  const [detailsCreateAppointmentOff, setDetailsCreateAppointmentOff] = useState(true);
   const [filters, setFilters] = useState({
     date: "",
     status: "",

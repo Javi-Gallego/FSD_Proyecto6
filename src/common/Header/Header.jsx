@@ -23,12 +23,12 @@ export function Header() {
                   <HeaderLink title="Trabajos" destination="/artistappointments" />
                 )
                 : (
-                  <HeaderLink title="Citas" destination="/Appointments" />
+                  <HeaderLink title="Citas" destination="/appointments" />
                 )
             )
           }
           {sessionStorage.getItem("role") === "super_admin" &&
-            <HeaderLink title="Users" destination="/users" />
+            <HeaderLink title="Usuarios" destination="/adminusers" />
           }
           <LogoutLink title="logout" />
         </>

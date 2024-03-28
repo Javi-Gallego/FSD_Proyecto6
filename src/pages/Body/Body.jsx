@@ -8,6 +8,8 @@ import { Appointments } from "../Appointments/Appointments";
 import { CreateAppointment } from "../CreateAppointment/CreateAppointment";
 import { Services } from "../Services/Services";
 import { Catalog } from "../Catalog/Catalog";
+import { AdminAppointments } from "../AdminAppointments/AdminAppointments";
+import { AdminUsers } from "../AdminUsers/AdminUsers";
 
 export const Body = () => {
   return (
@@ -18,6 +20,8 @@ export const Body = () => {
       <Route path="/profile" element={<Profile />} />
       <Route path="/appointments" element={<Appointments />} />
       <Route path="/createappointment" element={<CreateAppointment />} />
+      <Route path="/adminappointments" element={<AdminAppointments />} />
+      <Route path="/adminusers" element={<AdminUsers />} />
       <Route path="/changepassword" element={<ChangePassword />} />
       <Route path="/services" element={<Services />} />
       <Route path="/catalog" element={<Catalog />} />

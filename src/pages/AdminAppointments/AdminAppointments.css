@@ -1,0 +1,130 @@
+.appointmentsDesign {
+  height: auto;
+  min-height: 90vh;
+  width: 100vw;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(4, 10, 36);
+}
+.appointmentHeader{
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.filters{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: white;
+}
+.createAppointment {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+  font-weight: bold;
+  margin: 1em;
+  padding: 1em;
+  background-color: rgb(20, 46, 160);
+  color: white;
+}
+.createAppointment:hover {
+  background-color: rgb(30, 66, 226);
+}
+.adminAppointmentCard {
+  height: auto;
+  width: 40em;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
+  cursor: pointer;
+  font-weight: bold;
+  color: white;
+}
+
+.appointmentCard img {
+  width: 20em;
+  height: auto;
+  border-radius: 1em;
+}
+
+.separator {
+  height: 2em;
+}
+.eliminar {
+  height: 2.2;
+  width: 3em;
+}
+.eliminar img {
+  width: auto;
+  height: 2.1em;
+  cursor: pointer;
+}
+.eliminar:hover {
+  background-color: rgb(248, 114, 114);
+}
+.fieldData {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  text-align: flex-start;
+  width: 37em;
+}
+.fieldDate {
+  width: 10em;
+  margin: 0 1em 0 1em;
+}
+.fieldUser {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  text-align: flex-start;
+  width: 11em;
+  margin: 0 1em 0 1em;
+}
+.fieldArtist {
+  width: 8em;
+}
+.fieldService {
+  width: 40em;
+  text-align: center;
+}
+
+.Dark {
+  background-color: rgb(98, 142, 255);
+  color: white;
+}
+.Dark:hover {
+    background-color: rgb(188, 205, 249);
+    color: white;
+  }
+.Light {
+  background-color: rgb(135, 169, 255);
+  color: black;
+}
+.Light:hover {
+    background-color: rgb(188, 205, 249);
+    color: black;
+}
+.Selected{
+    background-color: rgb(31, 93, 251);
+    padding: 1em 0 1em 0;
+}
+  
