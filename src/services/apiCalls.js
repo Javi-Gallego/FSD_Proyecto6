@@ -218,3 +218,27 @@ export const getCatalog = async () => {
     return error;
   }
 };
+
+export const getUsers = async (token, querys) => {
+  const options = {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+  };
+
+  try {
+    const response = await fetch(rootUrl + "users/" + querys, options);
+
+    const data = await response.json();
+
+    if (!data.success) {
+      throw new Error(data.message);
+    }
+
+    return data.data;
+  } catch (error) {
+    return error;
+  }
+};
