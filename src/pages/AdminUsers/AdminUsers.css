@@ -9,7 +9,13 @@
   align-items: center;
   background-color: rgb(4, 10, 36);
 }
-.searchMenu{
+.centerRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.searchMenu {
   height: 3em;
   width: 80vw;
 
@@ -17,7 +23,70 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background-color: aquamarine;
+}
+.searchOptions {
+  height: 3em;
+  width: 80vw;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.tituloSearch{
+  font-weight: bold;
+  color: aliceblue;
+}
+.limit {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  font-weight: bold;
+  color: aliceblue;
+}
+.limitInput {
+  margin: 0 0.4em;
+}
+.limitInput:hover {
+  cursor: pointer;
+}
+.page {
+  font-weight: bold;
+  color: aliceblue;
+}
+.page img {
+  height: 1.5em;
+  width: 1.5em;
+}
+.pageButton:hover {
+  cursor: pointer;
+}
+.users {
+  height: auto;
+  width: 80vw;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.user {
+  height: 2em;
+  width: 80vw;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+
+  font-weight: bold;
+  color: white;
+}
+.user:hover {
+  background-color: rgb(8, 20, 69);
+  border: 0.1em solid aliceblue;
 }
 .index {
   height: 2em;
@@ -30,7 +99,6 @@
 
   font-weight: bold;
   color: white;
-  background-color: skyblue;
 }
 
 .id {
@@ -58,12 +126,25 @@
   width: 10vw;
   text-align: flex-start;
 }
-.delete{
+.delete {
   height: 2em;
   width: 5vw;
-  text-align: center;
 }
-.separator{
-    height: 1em;
-    width: 80vw;
+.delete:hover {
+  background-color: rgb(252, 119, 119);
+  cursor: pointer;
+}
+.delete:active {
+  transform: scale(0.8);
+}
+.delete img {
+  height: 1.5em;
+  width: 1.5em;
+}
+.separator {
+  height: 1em;
+  width: 80vw;
+}
+.border {
+  border: 0.1em solid aliceblue;
 }

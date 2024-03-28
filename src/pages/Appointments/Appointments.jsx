@@ -83,7 +83,7 @@ export const Appointments = () => {
             return Array.isArray(appointments) ? (
               appointments.map((appointment, index) => {
                 const date = dayjs(appointment.date).format(
-                  "DD MMM YYYY HH:MM"
+                  "DD MMM YYYY HH:mm"
                 );
                 return (
                   <article

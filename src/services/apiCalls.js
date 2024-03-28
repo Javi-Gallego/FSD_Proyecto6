@@ -219,7 +219,7 @@ export const getCatalog = async () => {
   }
 };
 
-export const getUsers = async (token, querys) => {
+export const getUsers = async (token, querys, limit, page) => {
   const options = {
     method: "GET",
     headers: {
@@ -229,7 +229,32 @@ export const getUsers = async (token, querys) => {
   };
 
   try {
-    const response = await fetch(rootUrl + "users/" + querys, options);
+    // console.log(rootUrl + `users?limit=${limit}&page=${page}` + querys)
+    const response = await fetch(rootUrl + `users?limit=${limit}&page=${page}`, options);
+
+    const data = await response.json();
+    console.log("data",data)
+    if (!data.success) {
+      throw new Error(data.message);
+    }
+
+    return data.data;
+  } catch (error) {
+    return error;
+  }
+};
+
+export const deleteUser = async (token, userId) => {
+  const options = {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+  };
+
+  try {
+    const response = await fetch(rootUrl + `users/${userId}`, options);
 
     const data = await response.json();
 
@@ -241,4 +266,4 @@ export const getUsers = async (token, querys) => {
   } catch (error) {
     return error;
   }
-};
+}
