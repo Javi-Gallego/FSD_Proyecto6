@@ -1,4 +1,5 @@
-const rootUrl = "https://inkspire-dev-afgq.1.ie-1.fl0.io/api/";
+// const rootUrl = "https://inkspire-dev-afgq.1.ie-1.fl0.io/api/";
+const rootUrl = "http://localhost:4000/api/";
 
 export const loginMe = async (credentials) => {
   const options = {
@@ -229,11 +230,10 @@ export const getUsers = async (token, querys, limit, page) => {
   };
 
   try {
-    // console.log(rootUrl + `users?limit=${limit}&page=${page}` + querys)
-    const response = await fetch(rootUrl + `users?limit=${limit}&page=${page}`, options);
+    const response = await fetch(rootUrl + `users?limit=${limit}&page=${page}` + querys, options);
 
     const data = await response.json();
-    console.log("data",data)
+
     if (!data.success) {
       throw new Error(data.message);
     }

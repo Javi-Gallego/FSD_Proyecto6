@@ -13,12 +13,12 @@ export const AdminUsers = () => {
   const [token, setToken] = useState(sessionStorage.getItem("token"));
   const [limit, setLimit] = useState(10);
   const [page, setPage] = useState(1);
+  const [details, setDetails] = useState(false);
   const [querys, setQuerys] = useState({
     firstName: "",
     email: "",
     role: "",
   });
-  const [details, setDetails] = useState(false);
 
   useEffect(() => {}, [users]);
 
@@ -41,7 +41,6 @@ export const AdminUsers = () => {
       if (querys.role !== "") {
         newQuery += `&role=${querys.role}`;
       }
-      console.log("newquery",newQuery)
       const newUsers = await getUsers(token, newQuery, limit, page);
       setUsers(newUsers);
     } catch (error) {
@@ -57,7 +56,6 @@ export const AdminUsers = () => {
   const removeUser = async (userId) => {
     try {
       const deleted = await deleteUser(token, userId);
-      console.log(deleted);
       const updatedUsers = users.filter((user) => user.id !== userId);
       setUsers(updatedUsers);
     } catch (error) {
@@ -151,7 +149,7 @@ export const AdminUsers = () => {
           <div className="delete"></div>
         </div>
         <div className="users">
-          {Array.isArray(users) !== 0 &&
+          {(Array.isArray(users) && users.lenth !== 0) &&
             users.map((user, index) => (
               <div key={index} className="user" onClick={toggleDetails}>
                 <div className="id centerRow">{user.id}</div>
