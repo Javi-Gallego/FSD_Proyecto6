@@ -1,5 +1,5 @@
 .serviceTitleInput {
-  width: 17em;
+  width: 15em;
   height: 2.7em;
   resize: none;
   display: flex;
@@ -10,9 +10,9 @@
   text-align: center;
   border: 0.1em solid transparent;
   background-color: transparent;
-  font-size: 1rem;
+  font-size: 1.3rem;
   font-weight: bold;
-  color: rgb(28, 43, 61);
+  color: rgb(255, 255, 255);
 }
 
 .enabledServiceTitleInput {
@@ -30,18 +30,53 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  text-align: center;
+  text-align: flex-start;
   border: 0.1em solid transparent;
   background-color: transparent;
   font-size: 1rem;
   font-weight: bold;
-  color: rgb(28, 43, 61);
+  color: rgb(255, 255, 255);
 }
 .enabledServiceDescriptionInput {
   border: 0.2em solid red;
 }
 .enabledServiceDescriptionInput:focus {
   border: 0.3em solid red;
+}
+
+.serviceCreateTitleInput {
+  width: 30em;
+  height: 1.5em;
+  resize: none;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 0.4em;
+  border: 0.1em solid transparent;
+  background-color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  color: rgb(28, 43, 61);
+}
+.serviceCreateDescriptionInput {
+  width: 25em;
+  height: 8em;
+  resize: none;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 0.4em;
+  border: 0.1em solid transparent;
+  background-color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  color: rgb(28, 43, 61);
 }

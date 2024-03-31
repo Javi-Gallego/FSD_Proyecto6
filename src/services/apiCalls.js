@@ -1,5 +1,5 @@
-// const rootUrl = "https://inkspire-dev-afgq.1.ie-1.fl0.io/api/";
-const rootUrl = "http://localhost:4000/api/";
+const rootUrl = "https://inkspire-dev-afgq.1.ie-1.fl0.io/api/";
+// const rootUrl = "http://localhost:4000/api/";
 
 export const loginMe = async (credentials) => {
   const options = {
@@ -208,6 +208,7 @@ export const createService = async (token, service) => {
   };
 
   try {
+    console.log("body", options.body)
     const response = await fetch(rootUrl + "services", options);
 
     const data = await response.json();

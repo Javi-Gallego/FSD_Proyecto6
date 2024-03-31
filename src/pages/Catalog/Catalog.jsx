@@ -15,7 +15,6 @@ export const Catalog = () => {
     try {
       const newCatalog = await getCatalog();
       setCatalog(newCatalog);
-      console.log("newcatalog", newCatalog);
     } catch (error) {
       console.log(error);
     }
@@ -28,14 +27,15 @@ export const Catalog = () => {
           catalog.map((tattoo, index) => {
             if (index !== 0) {
               return (
-                <div className="container" key={index}>
-                  {tattoo.tattooName}
-                  <img src={tattoo.urlImage} alt={tattoo.tattooName} />
+                <div className="catalogCard">
+                  <div className="container" key={index}>
+                    <div className="catalogTitle">{tattoo.tattooName}</div>
+                    <img src={tattoo.urlImage} alt={tattoo.tattooName} />
+                  </div>
                 </div>
               );
             }
-          })
-        }
+          })}
       </div>
     </>
   );

@@ -35,8 +35,8 @@
 
   .serviceButton{
     width: 5em;
-    height: 1.5em;
-    margin: 0 0.5em 0 0.5em;
+    height: 2.5em;
+    margin: 0.5em;
     display: flex;
     justify-content: center;
     align-items: center;
