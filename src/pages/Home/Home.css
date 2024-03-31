@@ -15,3 +15,16 @@
   height: 20em;
   width: auto;
 }
+h2{
+  color: white;
+}
+.intro{
+  height: auto;
+  width: 70vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  color: rgb(134, 107, 185);
+}

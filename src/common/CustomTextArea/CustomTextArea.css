@@ -1,0 +1,47 @@
+.serviceTitleInput {
+  width: 17em;
+  height: 2.7em;
+  resize: none;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: 0.1em solid transparent;
+  background-color: transparent;
+  font-size: 1rem;
+  font-weight: bold;
+  color: rgb(28, 43, 61);
+}
+
+.enabledServiceTitleInput {
+  border: 0.2em solid red;
+}
+.enabledServiceTitleInput:focus {
+  border: 0.3em solid red;
+}
+
+.serviceDescriptionInput {
+  overflow-y: hidden;
+  width: 17em;
+  height: 11em;
+  resize: none;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: 0.1em solid transparent;
+  background-color: transparent;
+  font-size: 1rem;
+  font-weight: bold;
+  color: rgb(28, 43, 61);
+}
+.enabledServiceDescriptionInput {
+  border: 0.2em solid red;
+}
+.enabledServiceDescriptionInput:focus {
+  border: 0.3em solid red;
+}

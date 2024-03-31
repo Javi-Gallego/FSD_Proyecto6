@@ -2,38 +2,83 @@
   height: auto;
   min-height: 90vh;
   width: 100vw;
-
   overflow: hidden;
-
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
-
   background-color: rgb(4, 10, 36);
 }
-.container {
+.servicesTablon {
+  height: auto;
+  min-height: 90vh;
+  width: 90vw;
+  max-width: 95em;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.serviceCard {
+  height: auto;
+  width: 20em;
+  margin: 1em 0 1em 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  border-radius: 0.5em;
+  margin: 0 1.5em 1em 1.5em;
+  /* background-color: rgb(107, 163, 185); */
+  background-color: rgb(134, 107, 185);
+  border: 0.1em solid white;
 }
 .title {
-  height: 1.8em;
+  height: 4em;
   width: 20em;
-  border-radius: 0.5em;
-  text-align: center;
+  border-radius: 0.5em 0.5em 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   font-weight: bold;
   background-color: white;
   color: rgb(4, 10, 36);
 }
-.description {
+.visor{
+  margin: 0.5em 0 0.5em 0;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.visor img {
   height: auto;
-  width: 80vw;
+  width: 18em;
+  border-radius: 0.5em;
+}
+.description {
+  height: 11em;
+  width: 19.5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   font-weight: bold;
   color: white;
 }
 .separator {
   height: 2em;
-  width: 90vw;
+  width: 99%;
+}
+.adminButtons{
+  height: 3em;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }

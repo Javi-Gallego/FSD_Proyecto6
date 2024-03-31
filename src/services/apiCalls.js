@@ -197,6 +197,83 @@ export const getServices = async () => {
   }
 };
 
+export const createService = async (token, service) => {
+  const options = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify(service),
+  };
+
+  try {
+    const response = await fetch(rootUrl + "services", options);
+
+    const data = await response.json();
+
+    if (!data.success) {
+      throw new Error(data.message);
+    }
+
+    return data.data;
+  } catch (error) {
+    return error;
+  }
+
+}
+
+export const updateService = async (token, service, serviceId) => {
+  const options = {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify(service),
+  };
+
+  try {
+    console.log(body)
+    console.log(rootUrl + `services/${serviceId}`)
+    const response = await fetch(rootUrl + `services/${serviceId}`, options);
+
+    const data = await response.json();
+
+    if (!data.success) {
+      throw new Error(data.message);
+    }
+
+    return data.data;
+  } catch (error) {
+    return error;
+  }
+};
+
+export const deleteService = async (token, serviceId) => {
+  const options = {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+  };
+
+  try {
+    const response = await fetch(rootUrl + `services/${serviceId}`, options);
+
+    const data = await response.json();
+
+    if (!data.success) {
+      throw new Error(data.message);
+    }
+
+    return data.data;
+  } catch (error) {
+    return error;
+  }
+};
+
 export const getCatalog = async () => {
   const options = {
     method: "GET",
@@ -303,9 +380,6 @@ export const updateRole = async (token, userId, role) => {
   };
 
   try {
-    console.log("updateRole")
-    console.log(rootUrl + `users/${userId}/role`)
-    console.log(options.body)
     const response = await fetch(rootUrl + `users/${userId}/role`, options);
 
     const data = await response.json();
