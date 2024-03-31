@@ -10,9 +10,9 @@
   text-align: center;
   border: 0.1em solid transparent;
   background-color: transparent;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   font-weight: bold;
-  color: rgb(255, 255, 255);
+  color: rgb(217, 202, 34);
 }
 
 .enabledServiceTitleInput {
@@ -25,7 +25,7 @@
 .serviceDescriptionInput {
   overflow-y: hidden;
   width: 17em;
-  height: 11em;
+  height: 14em;
   resize: none;
   display: flex;
   flex-wrap: wrap;
@@ -35,9 +35,9 @@
   text-align: flex-start;
   border: 0.1em solid transparent;
   background-color: transparent;
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: bold;
-  color: rgb(255, 255, 255);
+  color: rgb(217, 202, 34);
 }
 .enabledServiceDescriptionInput {
   border: 0.2em solid red;

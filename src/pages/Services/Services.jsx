@@ -116,7 +116,7 @@ export const Services = () => {
                   <CustomAreaText
                     type="text"
                     name="serviceName"
-                    value={service.serviceName || ""}
+                    value={service.serviceName.toUpperCase() || ""}
                     disabled={
                       parseInt(disabled) === service.id ? "" : "disabled"
                     }

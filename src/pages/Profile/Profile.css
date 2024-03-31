@@ -2,28 +2,26 @@
   height: auto;
   min-height: 90vh;
   width: 100vw;
-
+  background-image: url("../../img/cielo.jpg");
+  background-size: contain;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-
   background-color: rgb(4, 10, 36);
   color: white;
   font-weight: bold;
 }
 
 .profileCardDesign {
-  height: auto;
+  height: 28em;
   width: 15em;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  background-color: rgb(4, 10, 36);
+  background-color: rgb(27, 26, 30);
   color: white;
 }
 
@@ -35,4 +33,3 @@
 .error {
   color: red;
 }
-

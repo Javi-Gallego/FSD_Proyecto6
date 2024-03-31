@@ -2,42 +2,46 @@
   height: auto;
   min-height: 90vh;
   width: 100vw;
-
+  background-image: url("../../img/cielo.jpg");
+  background-size: contain;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
 
-  background-color: rgb(4, 10, 36);
+  background-color: rgb(39, 39, 42);
 }
-.container img{
-    height: auto;
-    width: 25em;
-    font-weight: bold;
+.container img {
+  height: auto;
+  width: 25em;
+  font-weight: bold;
 }
-.catalogCard{
-    width: 25em;
-    height: 30em;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 1em;
-    /* box-shadow: 0 0 10px rgba(255, 255, 255, 0.8); */
-    background-color: rgb(134, 107, 185);
+.catalogCard {
+  width: 25em;
+  height: 30em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 1em;
+  /* box-shadow: 0 0 10px rgba(255, 255, 255, 0.8); */
+  background-color: rgb(27, 26, 30);
 }
-.catalogTitle{
-    width: 10em;
-    height: 1.5em;
-    font-family: monospace;
-    font-size: 2.5rem;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-    color: white;
-    background-color: transparent;
+.catalogCard:hover {
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+.catalogTitle {
+  width: 10em;
+  height: 1.5em;
+  font-family: monospace;
+  font-size: 2.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  color: rgb(217, 202, 34);
+  background-color: transparent;
 }
