@@ -1,7 +1,12 @@
 import { useEffect, useState } from "react";
 import { Header } from "../../common/Header/Header";
 import "./AdminUsers.css";
-import { deleteUser, getUsers } from "../../services/apiCalls";
+import {
+  deleteUser,
+  getRoles,
+  getUsers,
+  updateRole,
+} from "../../services/apiCalls";
 import { FieldInput } from "../../common/FieldInput/FieldInput";
 import { Button } from "../../common/Button/Button";
 import papelera from "../../img/papelera2.png";
@@ -13,7 +18,11 @@ export const AdminUsers = () => {
   const [token, setToken] = useState(sessionStorage.getItem("token"));
   const [limit, setLimit] = useState(10);
   const [page, setPage] = useState(1);
-  const [details, setDetails] = useState(false);
+  const [details, setDetails] = useState("");
+  const [roles, setRoles] = useState([]);
+  const [newRole, setNewRole] = useState({
+    userRole: "",
+  });
   const [querys, setQuerys] = useState({
     firstName: "",
     email: "",
@@ -24,6 +33,7 @@ export const AdminUsers = () => {
 
   useEffect(() => {
     fetchUsers();
+    fetchRoles();
   }, [limit, page]);
 
   const handleLimit = (e) => {
@@ -47,6 +57,15 @@ export const AdminUsers = () => {
       console.log(error);
     }
   };
+  const fetchRoles = async () => {
+    try {
+      const newRoles = await getRoles(token);
+      setRoles(newRoles);
+      console.log(newRoles);
+    } catch (error) {
+      console.log(error);
+    }
+  };
   const inputHandler = (e) => {
     setQuerys((prevState) => ({
       ...prevState,
@@ -62,8 +81,12 @@ export const AdminUsers = () => {
       console.log(error);
     }
   };
-  const toggleDetails = () => {
-    setDetails(!details);
+  const toggleDetails = (index) => {
+    if (details === index) {
+      setDetails("");
+      return;
+    }
+    setDetails(index);
   };
   const prevPage = () => {
     if (page > 1) {
@@ -73,6 +96,20 @@ export const AdminUsers = () => {
   const nextPage = () => {
     if (users.length === parseInt(limit)) {
       setPage(page + 1);
+    }
+  };
+  const roleHandler = (e) => {
+    setNewRole({
+      ...newRole,
+      userRole: e.target.value,
+    });
+  };
+  const changeRole = async (userId) => {
+    try {
+      await updateRole(token, userId, newRole);
+      fetchUsers();
+    } catch (error) {
+      console.log(error);
     }
   };
 
@@ -149,22 +186,44 @@ export const AdminUsers = () => {
           <div className="delete"></div>
         </div>
         <div className="users">
-          {(Array.isArray(users) && users.lenth !== 0) &&
+          {Array.isArray(users) &&
+            users.lenth !== 0 &&
             users.map((user, index) => (
-              <div key={index} className="user" onClick={toggleDetails}>
-                <div className="id centerRow">{user.id}</div>
-                <div className="firstName centerRow">{user.firstName}</div>
-                <div className="lastName centerRow">{user.lastName}</div>
-                <div className="email centerRow">{user.email}</div>
-                <div className="role centerRow">{user.role.name}</div>
-                {user.role.name === "super_admin" ? (
-                  <div></div>
-                ) : (
-                  <div
-                    className="delete centerRow"
-                    onClick={() => removeUser(user.id)}
-                  >
-                    <img src={papelera} alt="papelera" />
+              <div key={index} className="user">
+                <div
+                  className=" user firstRow"
+                  onClick={() => toggleDetails(index)}
+                >
+                  <div className="id centerRow">{user.id}</div>
+                  <div className="firstName centerRow">{user.firstName}</div>
+                  <div className="lastName centerRow">{user.lastName}</div>
+                  <div className="email centerRow">{user.email}</div>
+                  <div className="role centerRow">{user.role.name}</div>
+                  {user.role.name === "super_admin" ? (
+                    <div></div>
+                  ) : (
+                    <div
+                      className="delete centerRow"
+                      onClick={() => removeUser(user.id)}
+                    >
+                      <img src={papelera} alt="papelera" />
+                    </div>
+                  )}
+                </div>
+                {details === index && user.role.name !== "super_admin" && (
+                  <div className="details">
+                    <select name="role" onChange={roleHandler}>
+                      {roles.map((role, index) => (
+                        <option key={index} value={role.id}>
+                          {role.name}
+                        </option>
+                      ))}
+                    </select>
+                    <Button
+                      text="Cambiar rol"
+                      functionClick={() => changeRole(user.id)}
+                      currentClass="buttonDesign"
+                    />
                   </div>
                 )}
               </div>

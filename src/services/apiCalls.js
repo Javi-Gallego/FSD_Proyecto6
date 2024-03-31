@@ -267,3 +267,55 @@ export const deleteUser = async (token, userId) => {
     return error;
   }
 }
+
+export const getRoles = async (token) => {
+  const options = {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+  };
+
+  try {
+    const response = await fetch(rootUrl + "roles", options);
+
+    const data = await response.json();
+
+    if (!data.success) {
+      throw new Error(data.message);
+    }
+
+    return data.data;
+  } catch (error) {
+    return error;
+  }
+};
+
+export const updateRole = async (token, userId, role) => {
+  const options = {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify( role ),
+  };
+
+  try {
+    console.log("updateRole")
+    console.log(rootUrl + `users/${userId}/role`)
+    console.log(options.body)
+    const response = await fetch(rootUrl + `users/${userId}/role`, options);
+
+    const data = await response.json();
+
+    if (!data.success) {
+      throw new Error(data.message);
+    }
+
+    return data.data;
+  } catch (error) {
+    return error;
+  }
+};

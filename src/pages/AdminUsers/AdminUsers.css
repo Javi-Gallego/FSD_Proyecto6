@@ -73,11 +73,12 @@
   align-items: center;
 }
 .user {
-  height: 2em;
+  height: auto;
   width: 80vw;
 
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: flex-start;
   align-items: center;
 
@@ -128,7 +129,7 @@
 }
 .delete {
   height: 2em;
-  width: 5vw;
+  width: 4.7vw;
 }
 .delete:hover {
   background-color: rgb(252, 119, 119);
@@ -147,4 +148,8 @@
 }
 .border {
   border: 0.1em solid aliceblue;
+}
+.details{
+  width: 100%;
+  min-width: 30em;
 }
