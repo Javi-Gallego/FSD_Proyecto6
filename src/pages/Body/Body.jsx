@@ -11,6 +11,7 @@ import { Catalog } from "../Catalog/Catalog";
 import { AdminAppointments } from "../AdminAppointments/AdminAppointments";
 import { AdminUsers } from "../AdminUsers/AdminUsers";
 import { CreateService } from "../CreateService/CreateService";
+import { RegisterSuccess } from "../RegisterSuccess/RegisterSuccess";
 
 export const Body = () => {
   return (
@@ -18,6 +19,7 @@ export const Body = () => {
       <Route path="/" element={<Home />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
+      <Route path="/registersuccess" element={<RegisterSuccess />} />
       <Route path="/profile" element={<Profile />} />
       <Route path="/appointments" element={<Appointments />} />
       <Route path="/createappointment" element={<CreateAppointment />} />

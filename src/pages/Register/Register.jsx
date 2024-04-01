@@ -63,13 +63,11 @@ export const Register = () => {
     }
 
     fetched = await registerMe(credentials);
-
+    navigate("/registerSuccess");
     if (!fetched.success) {
       setMsgError(fetched.message);
       return;
     }
-
-    navigate("/registerSuccess");
   };
 
   return (
