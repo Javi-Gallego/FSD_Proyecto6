@@ -9,7 +9,7 @@ import {
 } from "../../services/apiCalls";
 import { FieldInput } from "../../common/FieldInput/FieldInput";
 import { Button } from "../../common/Button/Button";
-import papelera from "../../img/papelera2.png";
+import papelera from "../../img/papelera.png";
 import nextArrowPage from "../../img/nextpage.png";
 import prevArrowPage from "../../img/prevpage.png";
 
