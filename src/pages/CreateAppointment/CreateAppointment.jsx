@@ -103,7 +103,6 @@ export const CreateAppointment = () => {
     try {
       const response = await getCatalog();
       setCatalog(response);
-      console.log(response);
     } catch (error) {
       console.log(error);
     }
@@ -171,10 +170,6 @@ export const CreateAppointment = () => {
                   {index === 0 ? "" : tattoo.tattooName}
                 </option>
               ))}
-              {/* <option value="0"></option>
-              <option value="2">León</option>
-              <option value="3">Tigre</option>
-              <option value="4">Mar</option> */}
             </select>
           </article>
         )}

@@ -20,7 +20,7 @@
 }
 .searchMenu {
   height: 3em;
-  width: 80vw;
+  width: 70vw;
 
   display: flex;
   flex-direction: row;
@@ -29,7 +29,7 @@
 }
 .searchOptions {
   height: 3em;
-  width: 80vw;
+  width: 70vw;
 
   display: flex;
   flex-direction: row;
@@ -86,9 +86,11 @@
   font-weight: bold;
   color: white;
 }
-/* .user:hover {
-  border: 0.1em solid aliceblue;
-} */
+.user:hover {
+  /* border: 0.1em solid aliceblue; */
+  background-color: rgb(122, 122, 122);
+  cursor: pointer;
+}
 .Dark {
   background-color: rgb(63, 63, 63);
 }
@@ -106,10 +108,12 @@
   align-items: center;
 
   font-weight: bold;
-  background-color: rgb(88, 88, 88);
+
   color: white;
 }
-
+.back{
+  background-color: rgb(88, 88, 88);
+}
 .id {
   height: 2em;
   width: 5vw;
@@ -150,6 +154,10 @@
   height: 1.5em;
   width: 1.5em;
 }
+.delete2 {
+  height: 2em;
+  width: 4.7vw;
+}
 .separator {
   height: 1em;
   width: 80vw;
@@ -160,4 +168,11 @@
 .details{
   width: 100%;
   min-width: 30em;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.fadeBack{
+  background-color: rgba(0, 0, 0, 0.5);
 }

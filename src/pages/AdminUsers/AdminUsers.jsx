@@ -61,7 +61,6 @@ export const AdminUsers = () => {
     try {
       const newRoles = await getRoles(token);
       setRoles(newRoles);
-      console.log(newRoles);
     } catch (error) {
       console.log(error);
     }
@@ -118,7 +117,7 @@ export const AdminUsers = () => {
       <Header />
       <div className="adminUsersDesign">
         <div className="separator"></div>
-        <div className="searchMenu">
+        <div className="searchMenu fadeBack">
           <div>
             <div className="tituloSearch">Nombre</div>
             <FieldInput
@@ -152,7 +151,7 @@ export const AdminUsers = () => {
             currentClass="buttonDesign"
           />
         </div>
-        <div className="searchOptions">
+        <div className="searchOptions fadeBack">
           <div className="limit">
             Usuarios por página:
             <div className="limitInput" value="5" onClick={handleLimit}>
@@ -178,12 +177,12 @@ export const AdminUsers = () => {
           </div>
         </div>
         <div className="index">
-          <div className="id border centerRow">ID</div>
-          <div className="firstName border centerRow">Nombre</div>
-          <div className="lastName border centerRow">Apellido</div>
-          <div className="email border centerRow">Email</div>
-          <div className="role border centerRow">Role</div>
-          <div className="delete"></div>
+          <div className="id border centerRow back">ID</div>
+          <div className="firstName border centerRow back">Nombre</div>
+          <div className="lastName border centerRow back">Apellido</div>
+          <div className="email border centerRow back">Email</div>
+          <div className="role border centerRow back">Role</div>
+          <div className="delete2"></div>
         </div>
         <div className="users">
           {Array.isArray(users) &&

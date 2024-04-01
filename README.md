@@ -79,6 +79,18 @@ If you need to run the server locally, you will need to go to /src/services/apiC
 <center><img src="/src/img/readme/rooturl.JPG"></center>
 
 ## Pages
+
+To log as a super_admin 
+``` js
+    "email": "super_admin@gmail.com",
+    "password": "Aa123456"
+```
+To log as a normal user (or you can register your own)
+``` js
+    "email": "silvia@gmail.com",
+    "password": "Aa123456"
+```
+
 :earth_africa: 
 <details>
 <summary>Non registered users </summary>
@@ -139,12 +151,42 @@ A detailed view of the user data. You can update any field at any moment. If you
 
 - APPOINTMENTS
 
+<center><img src="/src/img/readme/appointments.JPG"></center>
+
+Here you can your own appointments, if you click in each one you can see a detailed view and the option to delete the appointment.
+
+If you go to Create appointment you will see a new view.
+
+<center><img src="/src/img/readme/createappointment.JPG"></center>
+
 </details>
 </br>
 
 :angel:
 <details>
 <summary>Super admin</summary>
+
+- CATALOG
+
+<center><img src="/src/img/readme/superservices.JPG"></center>
+
+The catalog page from the super admin changes and now you can edit or delete appointment and can create a new one.
+
+- APPOINTMENTS
+
+
+- USERS 
+
+In this page you can search for any user in the database and apply three optional filters: name, email and role (e.g. search for tattoo_artist or user)
+The search will retrieve all users than matches the filter partially, if you search por the name "er" and you have an user with the name "Javier" that user will be shown
+
+<center><img src="/src/img/readme/searchuser.JPG"></center>
+
+You can choose how many results will be shown in each page and navigate through the different pages
+
+<center><img src="/src/img/readme/searchuser2.JPG"></center>
+
+If you click in any user you will see a detailed view and you can change his role or delete the user from the database
 </details>
 
 ## Problems solutions

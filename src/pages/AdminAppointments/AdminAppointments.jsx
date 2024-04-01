@@ -27,6 +27,9 @@ export const AdminAppointments = () => {
   });
 
   useEffect(() => {
+    if (sessionStorage.getItem("auth") === "false") {
+      navigate("/");
+    }
     if (!firstFetch) {
     }
   }, []);
@@ -49,7 +52,6 @@ export const AdminAppointments = () => {
       const newappointments = await getAppointments(token, filters);
       setAppointments(newappointments);
       setFirstFetch(true);
-      console.log("newappointments", newappointments);
     } catch (error) {}
   };
 
