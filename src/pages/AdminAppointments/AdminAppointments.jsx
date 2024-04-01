@@ -78,7 +78,14 @@ export const AdminAppointments = () => {
       console.log(error);
     }
   };
-
+const searchAppointment = async () => {
+  try {
+    const filteredAppointments = await getAppointments(token, filters);
+    setAppointments(filteredAppointments);
+  } catch (error) {
+    console.log(error);
+  }
+};
   return (
     <>
       <Header />
@@ -98,6 +105,9 @@ export const AdminAppointments = () => {
                     <div>Servicio</div>
                     <FieldInput />
                 </div>
+            </div>
+            <div className="createAppointment" onClick={searchAppointment}>
+              Buscar
             </div>
             <div className="createAppointment" onClick={createAppointment}>
               Crear cita nueva
@@ -155,7 +165,7 @@ export const AdminAppointments = () => {
                         {appointment.catalog && appointment.catalogId !== 1 && (
                           <div>
                             <div className="fieldService">Tatuaje: {appointment.catalog.tattooName}</div>
-                            <img src={appointment.catalog.urlImage}></img>
+                            <div className="fieldService"><img src={appointment.catalog.urlImage}></img></div>
                           </div>
                         )}
                       </div>

@@ -37,7 +37,6 @@
   cursor: pointer;
   font-weight: bold;
   margin: 1em;
-  padding: 1em;
   background-color: rgb(27, 26, 30);
   color: rgb(217, 202, 34);
 }
@@ -109,13 +108,16 @@
   width: 40em;
   text-align: center;
 }
-
+.fieldService img{
+  width: 12em;
+  height: auto;
+}
 .Dark {
   background-color: rgb(98, 142, 255);
   color: white;
 }
 .Dark:hover {
-    background-color: rgb(188, 205, 249);
+    background-color: rgb(175, 175, 175);
     color: white;
   }
 .Light {
@@ -123,11 +125,10 @@
   color: black;
 }
 .Light:hover {
-    background-color: rgb(188, 205, 249);
+    background-color: rgb(175, 175, 175);
     color: black;
 }
 .Selected{
-    background-color: rgb(31, 93, 251);
     padding: 1em 0 1em 0;
 }
   

@@ -24,10 +24,11 @@ export function Header() {
               </div>
             </div>
             <div className="HeaderRight">
-              <HeaderLink
+              {sessionStorage.getItem("role") !== "super_admin" && (
+                <HeaderLink
                 title={sessionStorage.getItem("firstName")}
                 destination="/profile"
-              />
+              />)}
               {sessionStorage.getItem("role") === "super_admin" ? (
                 <HeaderLink title="Citas" destination="/adminappointments" />
               ) : sessionStorage.getItem("role") === "tattoo_artist" ? (
