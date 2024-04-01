@@ -21,8 +21,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 1em;
-  height: 3em;
+  margin: 0.7em;
+  height: 1.2em;
   color: red;
-  font-size: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px white, -1px -1px 1px white, 1px -1px 1px white, -1px 1px 1px white;
+  background-color: rgba(80, 80, 80, 0.6);
 }

@@ -36,12 +36,6 @@ The super admin role can create new services, add images to the catalog, add new
 
 As super_admin you can also see all pending appointments of the shop and you can search for any client using different filters: name, email and rol(if you want to filter for user or tattoo_artist)
 
-Users can make, see and update their own appointments, they can also see and update their profiles.
-
-All people, without a login, can see the services and the catalog of the shop.
-
-Tattoo artists can see what appointments have scheduled.
-
 
 ## Stack
 

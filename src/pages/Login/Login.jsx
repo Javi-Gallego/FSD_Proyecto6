@@ -83,7 +83,7 @@ export const Login = () => {
           onChangeFunction={inputHandler}
           onBlurFunction={checkError}
         />
-        <div className="separator"></div>
+        <div className="error">{userError.emailError}</div>
         <AuthInput
           className="authInputDesign"
           type="password"
@@ -93,12 +93,13 @@ export const Login = () => {
           onChangeFunction={inputHandler}
           onBlurFunction={checkError}
         />
-        <div className="separator"></div>
+        <div className="error">{userError.passwordError}</div>
         <AuthButton
           text="Login"
           functionClick={logMe}
           currentClass="authButtonDesign glow-on-hover"
         />
+        <div className="error">{msgError}</div>
       </div>
     </>
   );
