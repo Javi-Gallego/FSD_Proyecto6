@@ -83,10 +83,23 @@ If you need to run the server locally, you will need to go to /src/services/apiC
 <details>
 <summary>Non registered users </summary>
 
+- CATALOG :earth_africa:
+
+<center><img src="/src/img/readme/catalog.JPG"></center>
+
+These are some samples of the catalog that you can choose if you like it. All these tattoos can be choosen if the user creates an appointment for the service "Tattoo from catalog".
+
+- SERVICES :earth_africa:
+
+<center><img src="/src/img/readme/services.JPG"></center>
+
+These are the services that the tattoo studio offers, with a little explanation and an image.
 
 - REGISTER :earth_africa:
 
 <center><img src="/src/img/readme/register.JPG"></center>
+
+As you are writing in the inputs you can see if the field has an error and is not valid
 
 - LOGIN :earth_africa:
 
@@ -109,6 +122,23 @@ To log as a normal user (or you can register your own)
 :lock:
 <details>
 <summary>Registered users</summary>
+
+- HEADER 
+
+<center><img src="/src/img/readme/usernavbar.JPG"></center> 
+
+Detail of de header when a user is logged. You see the user name's to go to their profile, the appointment section and the logout button.
+
+- PROFILE
+
+<center><img src="/src/img/readme/profile.JPG"></center> 
+
+A detailed view of the user data. You can update any field at any moment. If you want to change password you will be switched to another page.
+
+<center><img src="/src/img/readme/changepass.JPG"></center>
+
+- APPOINTMENTS
+
 </details>
 </br>
 

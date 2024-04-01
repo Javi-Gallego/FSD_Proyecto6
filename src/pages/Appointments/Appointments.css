@@ -38,8 +38,7 @@
   cursor: pointer;
   font-weight: bold;
   background-color: rgb(217, 202, 34);
-  color: white;
-  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+  color: rgb(4, 10, 36);
   padding: 1em;
   margin: 0.5em;
 }
@@ -59,7 +58,12 @@
 .separator {
   height: 2em;
 }
-
+.eliminar{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
 .eliminar img {
   width: 2em;
   height: auto;

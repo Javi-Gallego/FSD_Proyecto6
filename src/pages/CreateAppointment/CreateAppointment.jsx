@@ -7,7 +7,7 @@ import "@mantine/dates/styles.css";
 import { AuthButton } from "../../common/AuthButton/AuthButton";
 import dayjs from "dayjs";
 import "dayjs/locale/es";
-import { createAppointment } from "../../services/apiCalls";
+import { createAppointment, getCatalog } from "../../services/apiCalls";
 import { useNavigate } from "react-router-dom";
 
 export const CreateAppointment = () => {
@@ -18,7 +18,7 @@ export const CreateAppointment = () => {
 
   const [selectedDate, setSelectedDate] = useState("");
   const [token, setToken] = useState(sessionStorage.getItem("token"));
-
+  const [catalog, setCatalog] = useState([]);
   const [appointment, setAppointment] = useState({
     userId: null,
     serviceId: null,
@@ -26,6 +26,15 @@ export const CreateAppointment = () => {
     catalogId: null,
     date: null,
   });
+
+  useEffect(() => {
+    if (sessionStorage.getItem("auth") === "false") {
+      navigate("/");
+    }
+    if (catalog.length === 0) {
+      retrieveCatalog();
+    }
+  }, []);
 
   useEffect(() => {
     if (sessionStorage.getItem("auth") === "false") {
@@ -90,6 +99,15 @@ export const CreateAppointment = () => {
       console.log(error);
     }
   };
+  const retrieveCatalog = async () => {
+    try {
+      const response = await getCatalog();
+      setCatalog(response);
+      console.log(response);
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <>
       <Header />
@@ -148,10 +166,15 @@ export const CreateAppointment = () => {
           <article>
             <div className="tattooArtist">Elige un tatuaje</div>
             <select onChange={inputHandler} name="catalogId">
-              <option value="0"></option>
+              {catalog.map((tattoo, index) => (
+                <option key={index} value={index}>
+                  {index === 0 ? "" : tattoo.tattooName}
+                </option>
+              ))}
+              {/* <option value="0"></option>
               <option value="2">León</option>
               <option value="3">Tigre</option>
-              <option value="4">Mar</option>
+              <option value="4">Mar</option> */}
             </select>
           </article>
         )}
