@@ -2,8 +2,9 @@
   height: auto;
   min-height: 90vh;
   width: 100vw;
-  background-image: url("../../img/cielo.jpg");
-  background-size: contain;
+  background-image: url("../../img/fondo7.png");
+  background-size: cover;
+  background-attachment: fixed;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;

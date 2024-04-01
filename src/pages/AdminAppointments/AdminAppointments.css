@@ -2,7 +2,9 @@
   height: auto;
   min-height: 90vh;
   width: 100vw;
-
+  background-image: url("../../img/fondo7.png");
+  background-size: cover;
+  background-attachment: fixed;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -31,16 +33,17 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
+  border-radius: 0;
   cursor: pointer;
   font-weight: bold;
   margin: 1em;
   padding: 1em;
-  background-color: rgb(20, 46, 160);
-  color: white;
+  background-color: rgb(27, 26, 30);
+  color: rgb(217, 202, 34);
 }
 .createAppointment:hover {
-  background-color: rgb(30, 66, 226);
+  background-color: rgb(217, 202, 34);
+  color: rgb(27, 26, 30);
 }
 .adminAppointmentCard {
   height: auto;

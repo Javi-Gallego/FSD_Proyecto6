@@ -56,11 +56,8 @@ export const ChangePassword = () => {
         newPass: bodyPassword.newPass,
         currentPass: bodyPassword.currentPass,
       };
-      console.log(toChangePass);
       const hola = JSON.stringify(toChangePass);
-      console.log(hola);
       const updatedPass = await updateProfile(token, toChangePass);
-
       setUpdatedOK(true);
 
       setTimeout(() => {
@@ -75,46 +72,49 @@ export const ChangePassword = () => {
     <>
       <Header />
       <div className="changePasswordDesign">
-        <h1>
-          {updatedOK
-            ? "El cambio de password ha sido exitoso"
-            : "Cambio de password"}
-        </h1>
-        <p>Intruduzca el nuevo password</p>
-        <FieldInput
-          type="password"
-          name="newPass"
-          value={bodyPassword.newPass || ""}
-          disabled=""
-          onChangeFunction={inputHandler}
-          onBlur={checkError}
-          className="fieldInputDesign"
-        />
-        <p>Repita el nuevo password</p>
-        <FieldInput
-          type="password"
-          name="repeatPass"
-          value={bodyPassword.repeatPass || ""}
-          disabled=""
-          onChangeFunction={inputHandler}
-          onBlur={checkError}
-          className="fieldInputDesign"
-        />
-        <p>Intruduzca el password actual</p>
-        <FieldInput
-          type="password"
-          name="currentPass"
-          value={bodyPassword.currentPass || ""}
-          disabled=""
-          onChangeFunction={inputHandler}
-          onBlur={checkError}
-          className="fieldInputDesign"
-        />
-        <Button
-          text="Cambiar"
-          functionClick={changePass}
-          currentClass="buttonDesign"
-        />
+        <div className="changePassCard">
+          <div className="changeTitle">
+            {updatedOK
+              ? "El cambio de password ha sido exitoso"
+              : ""}
+          </div>
+          <div className="changeText">Intruduzca el nuevo password</div>
+          <FieldInput
+            type="password"
+            name="newPass"
+            value={bodyPassword.newPass || ""}
+            disabled=""
+            onChangeFunction={inputHandler}
+            onBlur={checkError}
+            className="fieldInputDesign enabledInput"
+          />
+          <div className="changeText">Repita el nuevo password</div>
+          <FieldInput
+            type="password"
+            name="repeatPass"
+            value={bodyPassword.repeatPass || ""}
+            disabled=""
+            onChangeFunction={inputHandler}
+            onBlur={checkError}
+            className="fieldInputDesign enabledInput"
+          />
+          <div className="changeText">Intruduzca el password actual</div>
+          <FieldInput
+            type="password"
+            name="currentPass"
+            value={bodyPassword.currentPass || ""}
+            disabled=""
+            onChangeFunction={inputHandler}
+            onBlur={checkError}
+            className="fieldInputDesign enabledInput"
+          />
+          <div className="separator"></div>
+          <Button
+            text="Cambiar"
+            functionClick={changePass}
+            currentClass="buttonDesign"
+          />
+        </div>
       </div>
     </>
   );

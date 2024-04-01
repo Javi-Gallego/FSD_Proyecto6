@@ -2,12 +2,13 @@
   height: auto;
   min-height: 90vh;
   width: 100vw;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
+  background-image: url("../../img/fondo7.png");
+  background-size: cover;
+  background-attachment: fixed;
   background-color: rgb(4, 10, 36);
 }
 
@@ -36,15 +37,17 @@
 
   cursor: pointer;
   font-weight: bold;
-  background-color: salmon;
+  background-color: rgb(217, 202, 34);
   color: white;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
   padding: 1em;
   margin: 0.5em;
-  border-radius: 1em;
 }
 
 .appointmentCard:hover {
-  background-color: rgb(248, 140, 121);
+  background-color: rgb(255, 234, 0);
+  color: rgb(27, 26, 30);
+  text-shadow: none;
 }
 
 .appointmentCard img {

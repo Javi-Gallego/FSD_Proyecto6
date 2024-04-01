@@ -1,5 +1,5 @@
 import { Header } from "../../common/Header/Header";
-import Logo from "../../img/logocuadrado.png";
+import Logo from "../../img/logo.png";
 import "./Home.css";
 
 export const Home = () => {
@@ -7,10 +7,14 @@ export const Home = () => {
     <>
       <Header />
       <div className="homeDesign">
+        <div className="leftColumn">
         <img src={Logo} alt="Inkspire"></img>
-        <h1>
-          ¡Hazte un tatuaje con nosotros!
-        </h1>
+          </div>
+        <div className="rightColumn">
+          <h1>
+            INKSPIRE ¿NOS TATUAMOS?
+          </h1>
+        </div>
       </div>
     </>
   );

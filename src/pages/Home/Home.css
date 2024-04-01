@@ -4,10 +4,11 @@
   width: 100vw;
 
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
-
+  background-image: url("../../img/fondo2.gif");
+  background-size: cover;
   background-color: rgb(4, 10, 36);
 }
 
@@ -15,16 +16,28 @@
   height: 20em;
   width: auto;
 }
-h2{
-  color: white;
-}
-.intro{
-  height: auto;
-  width: 70vw;
+.leftColumn{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-weight: bold;
-  color: rgb(134, 107, 185);
+  width: 25em;
+  height: 100%;
+  padding: 0 2em 0 0;
+}
+.rightColumn{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 25em;
+  height: 100%;
+  padding: 0 2em 0 0;
+}
+.homeDesign h1{
+  font-family: Verdana, Geneva, Tahoma;
+  font-size: 3rem;
+  color: rgb(223, 222, 217);
+  background-color: transparent;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
 }

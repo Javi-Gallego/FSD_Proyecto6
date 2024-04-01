@@ -1,53 +1,49 @@
 .buttonDesign {
-    width: 10em;
-    height: 2.5em;
-  
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  
-    border-radius: 0.5em;
-    font-size: 1rem;
-    font-weight: bold;
-  
-    cursor: pointer;
-    background-color: transparent;
-    border: 0.18em solid rgb(255, 255, 255);
-    color: rgb(255, 255, 255);
-    transition: 0.3s;
-  }
+  width: 10em;
+  height: 2.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: transparent;
+  border: 0.18em solid rgb(217, 202, 34);
+  color: rgb(217, 202, 34);
+  transition: 0.3s;
+}
 
-  .buttonDesign:hover {
-    background-color: rgb(9, 23, 82);
-  }
+.buttonDesign:hover {
+  background-color: rgb(217, 202, 34);
+  color: rgb(27, 26, 30);
+}
 
-  .update {
-    border-radius: 0.5em;
-    font-size: 1rem;
-    font-weight: bold;
-  
-    cursor: pointer;
-    background-color: transparent;
-    border: 0.18em solid rgb(255, 255, 255);
-    background-color: rgb(21, 187, 145);
-    color: rgb(0, 0, 0);
-  }
+.update {
+  border-radius: 0.5em;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: transparent;
+  border: 0.18em solid rgb(255, 255, 255);
+  background-color: rgb(21, 187, 145);
+  color: rgb(0, 0, 0);
+}
 
-  .serviceButton{
-    width: 5em;
-    height: 2.8em;
-    margin: 0.5em 0.5em 1em 0.5em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1rem;
-    font-weight: bold; 
-    cursor: pointer;
-    background-color: rgb(27, 26, 30);
-    border: 0.18em solid rgb(217, 202, 34);
-    color: rgb(217, 202, 34);
-  }
-  .serviceButton:hover {
-    background-color: rgb(217, 202, 34);
-    color: rgb(27, 26, 30);
-  }
+.serviceButton {
+  width: 5em;
+  height: 2.8em;
+  margin: 0.5em 0.5em 1em 0.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: rgb(27, 26, 30);
+  border: 0.18em solid rgb(217, 202, 34);
+  color: rgb(217, 202, 34);
+}
+.serviceButton:hover {
+  background-color: rgb(217, 202, 34);
+  color: rgb(27, 26, 30);
+}

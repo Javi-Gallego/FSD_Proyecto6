@@ -2,9 +2,8 @@
     width: 15em;
     height: 2em;
     text-align: center;
-    border-radius: 0.5em;
-    border: 0.2em solid rgb(4, 10, 36);    
-    background-color: rgb(4, 10, 36); 
+    border: 0.2em solid rgb(27, 26, 30); 
+    background-color: rgb(27, 26, 30);
     font-size: 1rem;
     color: white;
   }
@@ -34,7 +33,7 @@
   }
 
   .enabledInput:focus {
-    border: 0.2em solid rgb(0, 26, 255);
+    border: 0.2em solid rgb(217, 202, 34);
     outline: none;
   }
 

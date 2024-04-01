@@ -11,6 +11,7 @@ export const loginMe = async (credentials) => {
   };
 
   try {
+    console.log("options", options.body)
     const response = await fetch(rootUrl + "auth/login", options);
 
     const data = await response.json();

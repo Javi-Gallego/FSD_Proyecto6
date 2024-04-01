@@ -2,12 +2,13 @@
   height: auto;
   min-height: 90vh;
   width: 100vw;
-
+  background-image: url("../../img/fondo7.png");
+  background-size: cover;
+  background-attachment: fixed;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
   background-color: rgb(4, 10, 36);
   color: white;
   font-weight: bold;

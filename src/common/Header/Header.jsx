@@ -34,11 +34,17 @@ export function Header() {
         </>
       ) : (
         <>
-          <HeaderLink title="Home" destination="/" />
-          <HeaderLink title="Servicios" destination="/services" />
-          <HeaderLink title="Catalogo" destination="/catalog" />
-          <HeaderLink title="Register" destination="/register" />
-          <HeaderLink title="Login" destination="/login" />
+          <div className="Header">
+            <div className="HeaderLeft">
+              <HeaderLink title="Home" destination="/" />
+              <HeaderLink title="Servicios" destination="/services" />
+              <HeaderLink title="Catalogo" destination="/catalog" />
+            </div>
+            <div className="HeaderRight">
+              <HeaderLink title="Register" destination="/register" />
+              <HeaderLink title="Login" destination="/login" />
+            </div>
+          </div>
         </>
       )}
     </div>
