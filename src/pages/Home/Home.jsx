@@ -1,5 +1,6 @@
 import { Header } from "../../common/Header/Header";
 import Logo from "../../img/logo.png";
+import Logonombre from "../../img/logonombre.png";
 import "./Home.css";
 
 export const Home = () => {
@@ -8,11 +9,11 @@ export const Home = () => {
       <Header />
       <div className="homeDesign">
         <div className="leftColumn">
-        <img src={Logo} alt="Inkspire"></img>
+        <img src={Logonombre} alt="Inkspire"></img>
           </div>
         <div className="rightColumn">
           <h1>
-            INKSPIRE ¿NOS TATUAMOS?
+            ¿NOS TATUAMOS?
           </h1>
         </div>
       </div>

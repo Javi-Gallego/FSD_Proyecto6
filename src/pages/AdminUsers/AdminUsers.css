@@ -74,6 +74,7 @@
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  background-color: rgb(88, 88, 88);
 }
 .user {
   height: auto;
@@ -89,9 +90,16 @@
   color: white;
 }
 .user:hover {
-  background-color: rgb(8, 20, 69);
+  background-color: rgb(199, 199, 199);
   border: 0.1em solid aliceblue;
 }
+.Dark {
+  background-color: rgb(63, 63, 63);
+}
+.Light {
+  background-color: rgb(88, 88, 88);
+}
+
 .index {
   height: 2em;
   width: 80vw;
@@ -102,6 +110,7 @@
   align-items: center;
 
   font-weight: bold;
+  background-color: rgb(88, 88, 88);
   color: white;
 }
 

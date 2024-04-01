@@ -32,7 +32,8 @@
 .headerLinkDesign:hover::before {
   top: -0.18em;
   left: 0;
-  color: rgb(189, 21, 255);
+  /* color: rgb(189, 21, 255); */
+  color: red;
 }
 
 .headerLinkDesign::after {
@@ -43,7 +44,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: rgb(189, 21, 255);
+  background: red;
+  /* background: rgb(189, 21, 255); */
   transition: all 300ms ease;
 }
 

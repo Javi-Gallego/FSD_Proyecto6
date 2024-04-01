@@ -13,7 +13,7 @@
 }
 
 .homeDesign img{
-  height: 20em;
+  height: 28em;
   width: auto;
 }
 .leftColumn{
@@ -39,5 +39,5 @@
   font-size: 3rem;
   color: rgb(223, 222, 217);
   background-color: transparent;
-  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+  text-shadow: -3px 0 black, 0 3px black, 3px 0 black, 0 -3px black;
 }

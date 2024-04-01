@@ -189,7 +189,7 @@ export const AdminUsers = () => {
           {Array.isArray(users) &&
             users.lenth !== 0 &&
             users.map((user, index) => (
-              <div key={index} className="user">
+              <div key={index} className={`user ${(index % 2 === 0 )? `Dark` : `Light`}`}>
                 <div
                   className=" user firstRow"
                   onClick={() => toggleDetails(index)}
