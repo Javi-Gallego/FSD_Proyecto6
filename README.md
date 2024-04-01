@@ -174,7 +174,9 @@ The catalog page from the super admin changes and now you can edit or delete app
 
 - APPOINTMENTS
 
+<center><img src="/src/img/readme/superappointments.JPG"></center>
 
+In this page you can see all the appointmets from the moment onwards. You can delete any appointmet and see the details if you click on any of them.
 - USERS 
 
 In this page you can search for any user in the database and apply three optional filters: name, email and role (e.g. search for tattoo_artist or user)
@@ -190,20 +192,15 @@ If you click in any user you will see a detailed view and you can change his rol
 </details>
 
 ## Problems solutions
-I could not erase fields that were already written.
-
-If we update an appointment of a service that has tattoo artist and a tattoo image from the catalog and change that appointment to do a piercing, the obvious thing is to change the service_id and delete the artist_id and tattoo_id that are no longer needed, but I could not do that.
-
-I thought of an internal convention to change the artist_id to one named "worker" that points to a king of default worker and to a tattoo_id that points to a tattoo named "no tattoo selected".
+A lot of changes in the API because it was not made with front end point of view. Almost as many commits to fix things in the server as in the front end. It was good to see both points of view for the first time.
 
 ## Future features
 [ ] Tattoo artists can also make and update appointments on their own.
-[ ] Add reviews to the artists based on user experiences
-[ ] Add a rating system to the catalog and filter or order based on this rating.
+[ ] Add Tatto artist section with their works and bio.
+[ ] CRUD for catalog as super admin
 [ ] Maybe, to buy a piercing you do not need to make an appointment, just go to the shop. So you can see the service but cannot make an appointment with that service.
 [ ] Add piercings images to the catalog.
 [ ] Add role for piercing artists if they are different from the tattoo ones, add another role for the artists than can do both.
-[ ] Add a frontend so the users can interact with the API.
 
 ## Development:
 
