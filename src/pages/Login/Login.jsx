@@ -42,6 +42,7 @@ export const Login = () => {
       ...fields,
       [e.target.name]: e.target.value,
     }));
+    checkError(e);
   };
 
   const logMe = async () => {
@@ -50,6 +51,10 @@ export const Login = () => {
         setMsgError("No has rellenado todos los campos");
         return;
       }
+    }
+    if (userError.emailError !== "" || userError.passwordError !== "") {
+      setMsgError("Revisa los campos");
+      return;
     }
 
     fetched = await loginMe(credentials);
@@ -81,7 +86,6 @@ export const Login = () => {
           placeholder="Escribe tu email"
           value={credentials.email || ""}
           onChangeFunction={inputHandler}
-          onBlurFunction={checkError}
         />
         <div className="error">{userError.emailError}</div>
         <AuthInput
@@ -91,7 +95,6 @@ export const Login = () => {
           placeholder="Escribe tu password"
           value={credentials.password || ""}
           onChangeFunction={inputHandler}
-          onBlurFunction={checkError}
         />
         <div className="error">{userError.passwordError}</div>
         <AuthButton

@@ -42,6 +42,7 @@ export const Register = () => {
       ...prevState,
       [e.target.name]: e.target.value,
     }));
+    checkError(e);
   };
 
   const regUser = async () => {
@@ -50,6 +51,15 @@ export const Register = () => {
         setMsgError("No has rellenado todos los campos");
         return;
       }
+    }
+    if (
+      userError.first_nameError !== "" ||
+      userError.last_nameError !== "" ||
+      userError.emailError !== "" ||
+      userError.passwordError !== ""
+    ) {
+      setMsgError("Hay errores en los campos");
+      return;
     }
 
     fetched = await registerMe(credentials);
@@ -76,7 +86,6 @@ export const Register = () => {
           placeholder="Escribe tu nombre"
           value={credentials.first_name || ""}
           onChangeFunction={inputHandler}
-          onBlurFunction={checkError}
         />
         <div className="error">{userError.first_nameError}</div>
         <AuthInput
@@ -85,10 +94,9 @@ export const Register = () => {
           }`}
           type="last_name"
           name="last_name"
-          placeholder="Escribe tu nombre"
+          placeholder="Escribe tu apellido"
           value={credentials.last_name || ""}
           onChangeFunction={inputHandler}
-          onBlurFunction={checkError}
         />
         <div className="error">{userError.last_nameError}</div>
         <AuthInput
@@ -100,7 +108,6 @@ export const Register = () => {
           placeholder="Escribe tu email"
           value={credentials.email || ""}
           onChangeFunction={inputHandler}
-          onBlurFunction={checkError}
         />
         <div className="error">{userError.emailError}</div>
         <AuthInput
@@ -112,7 +119,6 @@ export const Register = () => {
           placeholder="Escribe tu password"
           value={credentials.password || ""}
           onChangeFunction={inputHandler}
-          onBlurFunction={checkError}
         />
         <div className="error">{userError.passwordError}</div>
         <AuthButton

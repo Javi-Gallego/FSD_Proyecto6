@@ -2,7 +2,7 @@
 
 <center><img src="/src/img/readme/logo.png"/></center>
 
-This is the fourth project in the Full Stack Developer Bootcamp at GeeksHubs
+This is the sixth project in the Full Stack Developer Bootcamp at GeeksHubs
 
 
   ## Content 📝
@@ -11,9 +11,6 @@ This is the fourth project in the Full Stack Developer Bootcamp at GeeksHubs
     <li><a href="#stack">Stack</a></li>
     <li><a href="#deploy-🚀">Deploy</a></li>
     <li><a href="#local-installation">Installation</a></li>
-    <li><a href="#api-information">API information</a></li>
-    <li><a href="#db-diagram">DB diagram</a></li>
-    <li><a href="#db-relations">DB relations</a></li>
     <li><a href="#endpoints">Endpoints</a></li>
     <li><a href="#problems-solutions">Problems solutions</a></li>
     <li><a href="#future-features">Future features</a></li>
@@ -41,331 +38,83 @@ As super_admin you can also see all pending appointments of the shop and you can
 
 <div align="center">
 <a href="">
-    <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
-</a>
-<a href="https://www.expressjs.com/">
-    <img src= "https://img.shields.io/badge/express.js-%23c04d59.svg?style=for-the-badge&logo=express&logoColor=white" alt="Express JS"/>
+    <img src="https://img.shields.io/badge/React-000000?style=for-the-badge&logo=react&logoColor=White" alt="React" />
 </a>
 <a href="">
-    <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL" />
+    <img src="https://img.shields.io/badge/HTML5-0f375d?style=for-the-badge&logo=html5" alt="HTML5" />
 </a>
-<a href="https://nodejs.org/es/">
-    <img src= "https://img.shields.io/badge/node.js-026E00?style=for-the-badge&logo=node.js&logoColor=white" alt="Node JS"/>
+<a href="">
+    <img src="https://img.shields.io/badge/css3-cc6636?style=for-the-badge&logo=css3" alt="CSS3" />
 </a>
 <a href="https://developer.mozilla.org/es/docs/Web/JavaScript">
     <img src= "https://img.shields.io/badge/javascipt-EFD81D?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript"/>
 </a>
 <a href="">
-<img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker" />
+    <img src="https://img.shields.io/badge/mantine-228cef?style=for-the-badge&logo=mantine&logoColor=white" alt="JWT" />
 </a>
 <a href="">
-    <img src="https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=jsonwebtokens&logoColor=white" alt="JWT" />
-</a>
-<a href="">
-    <img src="https://img.shields.io/badge/bcrypt-3178C6?style=for-the-badge&" alt="TypeScript" />
-</a>
-<a href="">
-    <img src="https://img.shields.io/badge/thunder-cc6636?style=for-the-badge" alt="TypeScript" />
+    <img src="https://img.shields.io/badge/JWT-287606?style=for-the-badge&logo=jsonwebtokens&logoColor=white" alt="JWT" />
 </a>
  </div>
 
 ## Deploy 🚀
 <div align="center">
-    <a href="https://tattooshopfsdjavier-dev-rkdt.2.ie-1.fl0.io"><strong>https://tattooshopfsdjavier-dev-rkdt.2.ie-1.fl0.io</strong></a>🚀🚀🚀
+    <a href="https://master.d2taes3vht5dyt.amplifyapp.com/"><strong>https://master.d2taes3vht5dyt.amplifyapp.com/</strong></a>🚀🚀🚀
 </div>
 
 
 ## Local installation
 
-1. If you don't have MySQL installed on you computer, you can install Docker and execute the above command on your Powershell to create a MySQL container
-` $ docker run --name nombre-contenedor -p 3311:3306 -e MYSQL_ROOT_PASSWORD=1234 -d mysql `
-2. Clone the repository
-` $ git clone https://github.com/Javi-Gallego/FSD_Proyecto4.git `
-3. Install dependencies
+1. Clone the repository
+` $ git clone https://github.com/Javi-Gallego/FSD_Proyecto6.git `
+2. Install dependencies
 ` $ npm install `
-4. Run server
+3. Run React project
 ` $ npm run dev `
-5. Run migrations on DB
-` $ npm run run-migrations `
-6. Mock DB with seeders
-` $ npm run seeds `
 
-## API information
+Unfortunately, the server is hosted on a free site and it is very likely that is not online the moment you want to see this project. In this link you have the repository (an Express made server working with a MySQL database) and the instructions to install it locally:
+https://github.com/Javi-Gallego/FSD_Proyecto4.git
+
+If you need to run the server locally, you will need to go to /src/services/apiCalls.js and put the right urlRoot.
+<center><img src="/src/img/readme/rooturl.JPG"></center>
+
+## Pages
+:earth_africa: 
 <details>
-<summary>Work in local</summary>
-The repository has a .env_local_sample. You have to change its name to .env to work properly
+<summary>Non registered users </summary>
 
-In the HTTP directory there is a file named tattoo_shop_local.json, you can open it with 'Thunder Client' to have all the endpoints of the API.
 
-For the endpoints examples below I will put the deployed url. In the tattoo_shop_local.json you have the url with your localhost.
+- REGISTER :earth_africa:
 
-If you will use the API in local, you need a connection to a DB and put the credentials in the .env as needed. These credentials are the user, the password for that user, the port to connect to the DB and the name of the database.
+<center><img src="/src/img/readme/register.JPG"></center>
+
+- LOGIN :earth_africa:
+
+<center><img src="/src/img/readme/login.JPG"></center> 
+
+
+To log as a super_admin 
+``` js
+    "email": "super_admin@gmail.com",
+    "password": "Aa123456"
+```
+To log as a normal user (or you can register your own)
+``` js
+    "email": "silvia@gmail.com",
+    "password": "Aa123456"
+```
 </details>
+</br>
 
+:lock:
 <details>
-<summary>Work with deployed server</summary>
-The repository has a .env_deploy_sample. You have to change its name to .env to work properly.
-
-In the HTTP directory theres a file named tattoo_shop_deployed.json, you can open it with 'Thunder Client' to have all the endpoints of the API.
+<summary>Registered users</summary>
 </details>
+</br>
 
+:angel:
 <details>
-<summary>Authentication</summary>
-When an endpoint needs authentication you must put the token given to you when you login in the Bearer Token field in "Auth". In the login endpoint I will put the super_admin email and password.
-
- !['imagen-auth'](./img/AuthenticationToken.JPG)
-
- For a fast comprehension we will use icons to show what is needed to see the endopoints:
- :angel: You must be logged as super_admin
- :man: You must be logged
- :earth_africa: This endpoint is global and can be viewed by everybody
- :lock: You can enter this endpoint if you are authenticated. If you are a user you can only search, update or retrieve your own things, if you are a super_admin you can change or retrieve all the records of the database.
-</details>
-
-## DB diagram
-!['imagen-db'](./img/DB_relations.JPG)
-
-## DB relations
-    
-    - "Roles" to "Users": One-to-many relationship
-    where:
-      - One role can have many users.
-
-    - "Users" to "Appointments": One-to-many relationship
-    where:
-      - One user can have many appointments.
-
-    - "Services" to "Appointments": One-to-many relationship
-    where:
-      - One service can have many appointments.
-
-    - "Catalogs" to "Appointments": One-to-many relationship
-    where:
-      - One catalog can have many appointments.
-
-## Endpoints
-
-<details>
-<summary>Endpoints</summary>
-
-
-- AUTH
-    - REGISTER :earth_africa:
-
-            POST https://tattooshopfsdjavier-dev-rkdt.2.ie-1.fl0.io/api/auth/register
-        body:
-        ``` js
-            {
-                "first_name": "Alberto",
-                "last_name": "Martínez",
-                "email": "alberto@gmail.com",
-                "password": "123456"
-            }
-        ```
-
-    - LOGIN :earth_africa:
-
-            POST https://tattooshopfsdjavier-dev-rkdt.2.ie-1.fl0.io/api/auth/login 
-        body:
-        ``` js
-            {
-                "email": "super_admin@gmail.com",
-                "password": "123456"
-            }
-        ```
-        This will be needed to obtain a token with super_admin credentials
-        body:
-        ``` js
-            {
-                "email": "javi@gmail.com",
-                "password": "123456"
-            }
-        ```
-        This will be needed to obtain a token with user credentials
-- USERS
-    - PROFILE :lock:
-
-            GET https://tattooshopfsdjavier-dev-rkdt.2.ie-1.fl0.io/api/users/profile
-
-        You must be logged in and you will see the profile of the user authenticated.
-
-    - UPDATE PROFILE :lock:
-
-            PUT https://tattooshopfsdjavier-dev-rkdt.2.ie-1.fl0.io/api/users?limit=10&page=1
-            body:
-        ``` js
-            {
-                { 
-                    "email": "email",
-                    "firstName": "firstname",
-                    "lastName": "lastname",
-                    "currentPassw": "pass",
-                    "newPass": "newpass"
-                }
-            }
-        ```
-        You must be logged because it will show the profile based on the id that is encrypted in the token. You can change your first name, last name, email or your password. If you want to change your password you must put your current password and the new password. It has same validations as in the registration.
-        Fields that want to be updated must be named in the body as in the example.
-    - GET USERS :angel:
-
-            GET https://tattooshopfsdjavier-dev-rkdt.2.ie-1.fl0.io/api/users?limit=10&page=1
-            body:
-        ``` js
-            {
-                { 
-                    "email": "email",
-                    "name": "firstname",
-                    "lastname": "lastname",
-                    "role": "rolename"
-                }
-            }
-        ```
-        This endponint has the query params "limit" and "page". "limit" is the number of records shown each time. If there are more registres than the limit they are shown in next pages.
-        If you don't have any value in the body it will show every user in the database but you can put some entries that will work as filters, they are optional to put and the value must be exactly the same as in the database.
-        You must be logged as super_admin to retrieve users.
-    - UPDATE USER ROLE :angel:
-
-            PUT https://tattooshopfsdjavier-dev-rkdt.2.ie-1.fl0.io/api/users/13/role
-        body:
-        ``` js
-            {
-                "userRole": 3
-            }
-        ```
-        You must be logged as super_admin. In the url we pass the user id as a parameter and we should send the new role id of that user in the body. 
-        1 -> super_admin
-        2 -> admin
-        3 -> user
-        4 -> tattoo_artist
-        5 -> worker
-    - DELETE USER :angel:
-
-            DELETE https://tattooshopfsdjavier-dev-rkdt.2.ie-1.fl0.io/api/users
-        body:
-        ``` js
-            {
-                "id": 10
-            }
-        ```
-        You must be logged as super_admin. This time you must send the user id you want to delete in the body. 
-- SERVICES
-    - GET SERVICES :earth_africa:
-
-            GET https://tattooshopfsdjavier-dev-rkdt.2.ie-1.fl0.io/api/services
-
-        Everybody can see all the services provided by the shop. No authentication needed.
-    - CREATE SERVICES :angel: 
-
-            POST  https://tattooshopfsdjavier-dev-rkdt.2.ie-1.fl0.io/api/services
-            body:
-        ``` js
-            {
-                "serviceName": "name",
-                "description": "description"    
-            }
-        ```
-        You must be logged as super_admin to create a service. The body must have a "serviceName" and a "description" field.
-    - UPDATE SERVICES :angel: 
-
-            PUT  https://tattooshopfsdjavier-dev-rkdt.2.ie-1.fl0.io/api/services/:id
-            body:
-        ``` js
-            {
-                "serviceName": "name",
-                "description": "description"
-            }
-        ```
-        You must be logged as super_admin to update a service. The body must have a "serviceName" a "description" or both fields. The id of the updated service must be send via parameter in the url.
-    - DELETE SERVICE :angel: 
-
-            DELETE  https://tattooshopfsdjavier-dev-rkdt.2.ie-1.fl0.io/api/services
-            body:
-        ``` js
-            {
-                { 
-                    "id": 6,
-                }
-            }
-        ```
-        You must be logged as super_admin to delete a service. The body must have the id of the service to be deleted
-
-- CATALOG
-    - GET CATALOG :earth_africa:
-
-            GET https://tattooshopfsdjavier-dev-rkdt.2.ie-1.fl0.io/api/catalog
-
-        Everybody can see all the tattoos int the catalog of the shop.
-
-    - CREATE TATTOO
-
-            POST  https://tattooshopfsdjavier-dev-rkdt.2.ie-1.fl0.io/api/catalog
-            body:
-        ``` js
-            {
-                "tattooName": "Rhino",
-                "urlImage": "./img/rhino.jpg"
-            }
-        ```
-        You must be logged as super_admin to create a tattoo. The body must have a "tattooName" and a "urlImage" field.
-    - UPDATE TATTOO :angel: 
-
-            PUT  https://tattooshopfsdjavier-dev-rkdt.2.ie-1.fl0.io/api/catalog/:id
-            body:
-        ``` js
-            {
-                "tattooName": "Rrrrrhino",
-                "urlImage": "./img/rinrin.jpg"
-            }
-        ```
-        You must be logged as super_admin to update a tattoo. The body must have a "serviceName" a "description" or both fields. The id of the updated tattoo must be send via parameter in the url.
-    - DELETE TATTOO :angel: 
-
-            DELETE  https://tattooshopfsdjavier-dev-rkdt.2.ie-1.fl0.io/api/catalog/:id
-
-        You must be logged as super_admin to delete a tattoo. The id must be passed as parameter in the url
-
-- APPOINTMENTS
-    - GET APPOINTMENTS :lock:
-
-            GET https://tattooshopfsdjavier-dev-rkdt.2.ie-1.fl0.io/api/appointments
-            query examples:
-        ``` js
-            {
-                ?id=5&serviceId=2&artistId=11&catalogId=2
-            }
-        ```
-
-        Authentication needed. If you are a normal user you can only retrieve your appointments. Only appointmets posterior to the actual date are shown. A Filter can be applied as query params and the values that can be checked are id, serviceId, artistId and catalogId, all the fields are optionals.
-
-    - CREATE APPOINTMENT :man:
-    
-            POST  https://tattooshopfsdjavier-dev-rkdt.2.ie-1.fl0.io/api/appointments
-            body:
-        ``` js
-            {
-                "serviceId": 5,
-                "date": "2024-03-26 17:00:00"
-            }
-        ```
-        You must be logged to create an appointment. In the body you must send all the fields needed. Only serviceId = 2 has the option of catalogId, and only serviceId 1, 2 and 3 have the option of artistId.
-    - UPDATE APPOINTMENT :lock:
-
-            PUT  https://tattooshopfsdjavier-dev-rkdt.2.ie-1.fl0.io/api/appointments:id
-            body:
-        ``` js
-            {
-                "serviceId": 2,
-                "artistId": 11,
-                "catalogId": 3,
-                "date": "2024-03-17 11:00:00"
-            }
-        ```
-        You must be logged to update an appointment. The id of the appointment must be passed as parameter in the url, in the body you can send all the fields you want to change. Only serviceId = 2 has the option of catalogId, and only serviceId 1, 2 and 3 have the option of artistId. If you are a normal user you can change only your own appointments. If you are logged as super admin, you can change every appointment of the DB.
-    - DELETE APPOINTMENT :angel: 
-
-            DELETE  https://tattooshopfsdjavier-dev-rkdt.2.ie-1.fl0.io/api/catalog/:id
-
-        You must be logged as super_admin to delete a tattoo. The id must be passed as parameter in the url
+<summary>Super admin</summary>
 </details>
 
 ## Problems solutions
