@@ -19,11 +19,9 @@ export const AdminAppointments = () => {
   const [appointments, setAppointments] = useState([]);
   const [appointmentDetailsOn, setAppointmentDetailsOn] = useState("");
   const [filters, setFilters] = useState({
-    userId: "",
-    serviceId: "",
-    artistId: "",
-    catalogId: "",
-    date: "",
+    userName: "",
+    serviceName: "",
+    artistName: "",
   });
 
   useEffect(() => {
@@ -45,7 +43,8 @@ export const AdminAppointments = () => {
       ...prevState,
       [e.target.name]: e.target.value,
     }));
-  }
+    console.log(filters);
+  };
 
   const fetchAppointments = async () => {
     try {
@@ -78,40 +77,54 @@ export const AdminAppointments = () => {
       console.log(error);
     }
   };
-const searchAppointment = async () => {
-  try {
-    const filteredAppointments = await getAppointments(token, filters);
-    setAppointments(filteredAppointments);
-  } catch (error) {
-    console.log(error);
-  }
-};
+  const searchAppointment = async () => {
+    try {
+      const filteredAppointments = await getAppointments(token, filters);
+      setAppointments(filteredAppointments);
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <>
       <Header />
       <section className="appointmentsDesign">
         <div className="appointmentHeader">
-            <div className="filters">
-                <div className="filterName">
-                    <div>Usuario</div>
-                    <FieldInput 
-                    />
-                </div>
-                <div className="filterName">
-                    <div>Tatuador</div>
-                    <FieldInput />
-                </div>
-                <div className="filterName">
-                    <div>Servicio</div>
-                    <FieldInput />
-                </div>
+          <div className="filters">
+            <div className="filterName">
+              <div>Usuario</div>
+              <FieldInput
+                type="text"
+                name="userName"
+                value={filters.userName || ""}
+                onChangeFunction={inputHandler}
+              />
             </div>
-            <div className="createAppointment" onClick={searchAppointment}>
-              Buscar
+            <div className="filterName">
+              <div>Tatuador</div>
+              <FieldInput
+                type="text"
+                name="artistName"
+                value={filters.artistName || ""}
+                onChangeFunction={inputHandler}
+              />
             </div>
-            <div className="createAppointment" onClick={createAppointment}>
-              Crear cita nueva
+            <div className="filterName">
+              <div>Servicio</div>
+              <FieldInput
+                type="text"
+                name="serviceName"
+                value={filters.serviceName || ""}
+                onChangeFunction={inputHandler}
+              />
             </div>
+          </div>
+          <div className="createAppointment" onClick={searchAppointment}>
+            Buscar
+          </div>
+          <div className="createAppointment" onClick={createAppointment}>
+            Crear cita nueva
+          </div>
         </div>
         <div className="separator"></div>
         {appointments.length === 0 ? (
@@ -126,17 +139,21 @@ const searchAppointment = async () => {
                 return (
                   <article
                     key={index}
-                    className={`adminAppointmentCard ${(index % 2 === 0 )? `Dark` : `Light`}`}
+                    className={`adminAppointmentCard ${
+                      index % 2 === 0 ? `Dark` : `Light`
+                    }`}
                     onClick={() => detailsAppointment(index)}
                   >
                     {appointmentDetailsOn !== index ? (
                       <div className="adminAppointmentCard">
                         <div className="fieldData">
-                            <div className="fieldDate">{date}</div>
-                            <div className="fieldUser">{`${appointment.user.firstName} ${appointment.user.lastName}`}</div>
-                            {appointment.artist && appointment.artistId !== 3 && (
-                              <div className="fieldArtist">{appointment.artist.firstName}</div>
-                            )}
+                          <div className="fieldDate">{date}</div>
+                          <div className="fieldUser">{`${appointment.user.firstName} ${appointment.user.lastName}`}</div>
+                          {appointment.artist && appointment.artistId !== 3 && (
+                            <div className="fieldArtist">
+                              {appointment.artist.firstName}
+                            </div>
+                          )}
                         </div>
                         <div
                           className="eliminar"
@@ -148,11 +165,13 @@ const searchAppointment = async () => {
                     ) : (
                       <div className="adminAppointmentCard Selected">
                         <div className="fieldData">
-                            <div className="fieldDate">{date}</div>
-                            <div className="fieldUser">{`${appointment.user.firstName} ${appointment.user.lastName}`}</div>
-                            {appointment.artist && appointment.artistId !== 3 && (
-                              <div className="fieldArtist">{appointment.artist.firstName}</div>
-                            )}
+                          <div className="fieldDate">{date}</div>
+                          <div className="fieldUser">{`${appointment.user.firstName} ${appointment.user.lastName}`}</div>
+                          {appointment.artist && appointment.artistId !== 3 && (
+                            <div className="fieldArtist">
+                              {appointment.artist.firstName}
+                            </div>
+                          )}
                         </div>
                         <div
                           className="eliminar"
@@ -161,11 +180,17 @@ const searchAppointment = async () => {
                           <img src={papelera}></img>
                         </div>
 
-                        <div className="fieldService">{appointment.service.serviceName}</div>
+                        <div className="fieldService">
+                          {appointment.service.serviceName}
+                        </div>
                         {appointment.catalog && appointment.catalogId !== 1 && (
                           <div>
-                            <div className="fieldService">Tatuaje: {appointment.catalog.tattooName}</div>
-                            <div className="fieldService"><img src={appointment.catalog.urlImage}></img></div>
+                            <div className="fieldService">
+                              Tatuaje: {appointment.catalog.tattooName}
+                            </div>
+                            <div className="fieldService">
+                              <img src={appointment.catalog.urlImage}></img>
+                            </div>
                           </div>
                         )}
                       </div>
